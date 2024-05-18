@@ -1,0 +1,275 @@
+/* Media Query for screens up to 1400px */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh; /* Decrease height */
+    margin-bottom: 6rem;
+  }
+
+  .about-containers {
+    flex-wrap: wrap; /* Ensure about containers wrap on smaller screens */
+  }
+
+  #contact,
+  #projects {
+    height: fit-content; /* Allow contact and projects section to expand as needed */
+  }
+}
+
+/* Media Query for screens up to 1200px */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none !important; /* Hide desktop navigation */
+  }
+
+  #hamburger-nav {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+
+  #profile,
+  .section-container {
+    display: block;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0; /* Adjust as needed */
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px; /* Adjust this value to control spacing */
+    font-size: 5vw; /* Adjusted font size */
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    /*color: white;*/
+    white-space: nowrap; /* Ensure text does not wrap */
+  }
+
+  h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    color: #037d80;
+    overflow: hidden;
+    animation: animate 6s linear infinite; /* Adjusted animation duration */
+  }
+
+  @keyframes animate {
+    0%,
+    40%,
+    100% {
+      width: 0;
+    }
+    40%,
+    70% {
+      width: 100%;
+    }
+  }
+
+  .text.sec-text {
+    text-align: center;
+  }
+
+  section,
+  .section-container {
+    height: fit-content;
+  }
+
+  section {
+    margin: 0 5%;
+  }
+
+  .section__pic-container {
+    margin: 0 auto 3rem;
+  }
+
+  .section__pic-container img {
+    width: 400px; /* Adjust the width to make the image smaller */
+    height: 400px; /* Adjust the height accordingly */
+    border-radius: 150%;
+    border: 15px solid #00fbff;
+    transition: none; /* Stop the transition */
+  }
+
+  .section__text {
+    margin-top: 1px; /* Add margin to the top of the text container */
+    padding: 0 10px; /* Add padding to the text container */
+    text-align: center; /* Center align the text */
+  }
+
+  .details-container {
+    margin-top: 10px; /* Add margin to the top of the text container */
+    padding: 0 15px; /* Add padding to the text container */
+    text-align: center; /* Center align the text */
+  }
+  .details-container h2 {
+    color: black;
+  }
+}
+
+/* Media Query for screens up to 600px */
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh; /* Decrease height of contact and footer sections */
+  }
+
+  #profile {
+    height: 83vh; /* Decrease height of profile section */
+    margin-bottom: 4; /* Remove bottom margin */
+  }
+
+  .container {
+    width: 80%; /* Adjust as needed */
+    text-align: center; /* Center align the text */
+  }
+
+  .container .text {
+    font-size: 20px; /* Adjust as needed */
+  }
+
+  h2[data-text] {
+    display: flex;
+    animation: none;
+    font-size: 1.71rem;
+    /*text-align: center; 
+    font-size: 2rem; 
+    margin: 0 auto; 
+    margin-top: 0;*/
+  }
+
+  .text.sec-text {
+    text-align: center;
+  }
+
+  article {
+    font-size: 1rem; /* Decrease font size of articles */
+  }
+
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap; /* Ensure elements wrap on smaller screens */
+  }
+
+  .contact-info-container {
+    margin: 0; /* Remove margin */
+  }
+
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem; /* Decrease font size */
+  }
+
+  .experience-sub-title {
+    font-size: 1.25rem; /* Decrease font size */
+  }
+
+  .logo {
+    font-size: 1.5rem; /* Decrease font size */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .section__pic-container {
+    width: auto;
+    height: 20vw; /* Adjust height relative to viewport width */
+    justify-content: center;
+  }
+
+  .section__pic-container img {
+    width: 200px; /* Adjust the width to make the image smaller */
+    height: 200px; /* Adjust the height accordingly */
+    border-radius: 50%;
+    border: 15px solid #00fbff;
+    transition: none; /* Stop the transition */
+  }
+
+  .section__pic-container:hover img {
+    transform: none; /* Remove the transform effect on hover */
+  }
+
+  .text-container p {
+    font-size: 14px;
+  }
+
+  .section__text {
+    margin-top: 150px; /* Add margin to the top of the text container */
+    padding: 0 20px; /* Add padding to the text container */
+    text-align: center; /* Center align the text */
+  }
+
+  .details-container {
+    margin-top: 140px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .top {
+    display: none;
+  }
+
+  footer {
+    margin-bottom: 1rem; /* Adjusted margin for smaller screens */
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  #emailForm {
+    width: 100%; /* Adjusted width for smaller screens */
+    padding: 0 20px; /* Added padding for better spacing */
+  }
+
+  .input-group {
+    margin-bottom: 0.5rem; /* Adjusted margin for smaller screens */
+  }
+
+  .input-group label {
+    margin-bottom: 0.5rem; /* Adjusted margin for smaller screens */
+  }
+
+  .input-group input[type="text"],
+  .input-group input[type="email"],
+  .input-group textarea {
+    width: 70%;
+  }
+
+  #emailForm input[type="submit"] {
+    margin-top: 1rem; /* Adjusted margin for smaller screens */
+    width: 40%; /* Adjusted width for smaller screens */
+  }
+
+  .copyright p {
+    font-size: 10px; /* Adjusted font size for smaller screens */
+  }
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    
+    <nav id="desktop-nav" >
+      <div class="logo">
+        <img src="./assets/logo03.PNG" alt="logo">
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <ul>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+            <li><a href="#courses" onclick="toggleMenu()">Courses</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/iftekharH.png" alt="Iftekhar Hasan profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hi there, I'm</p>
+        <!--<h1 class="title">Iftekhar Hasan</h1>-->
+        <div class="title-container">
+          <h3 class="title1">Iftekhar Hasan</h3>
+        </div>
+        
+        <h2 data-text="Computer Science'25">Computer Science'25</h2>
+
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/Hasan.Iftekhar.resume.pdf')"
+          >
+            Resume
+          </button>
+          
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin (1).png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://linkedin.com/'"
+          />
+          <img
+            src="./assets/github (2).png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/'"
+          />
+          <img
+            src="./assets/twitter.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://linkedin.com/'"
+          />
+          <img
+            src="./assets/facebook.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/'"
+          />
+        </div>
+      </div>
+      <img
+          src="./assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#about'"
+      /> 
+    </section>
+
+    <section id="about">
+      <p class="section__text__p1"></p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/aboutpic.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/Education-PNG-Clipart.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Wayne State University <br/>B.Sc. in Computer Science (Senior) <br/>Hamtramck High School - class'21</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am a senior majoring in Computer Science at Wayne State University. 
+              As I continue to explore and expand my knowledge, I am eagerly 
+              seeking opportunities that will allow me to apply what I’ve 
+              learned and grow professionally. I am open to new challenges 
+              and ready to bring my enthusiasm and dedication to a dynamic 
+              work environment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#skills'"
+      /> 
+    </section>
+
+    <section id="skills">
+      <p class="section__text__p1"></p>
+      <h1 class="title">Skills</h1>
+      <div class="skills-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="skills-sub-title">Programming</h2>
+            <div class="article-container">
+              <article>
+                <div class="skill-name">C++</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="65%" style="width: 65%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">Python</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="70%" style="width: 70%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="85%" style="width: 85%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="60%" style="width: 60%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">Java</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="55%" style="width: 50%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">JavaScript</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="40%" style="width: 40%"></div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="skills-sub-title">Technical Tools</h2>
+            <div class="article-container">
+              <article>
+                <div class="skill-name">Simens NX</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="70%" style="width: 70%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">Visual Studio</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="85%" style="width: 85%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">MS Office</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="90%" style="width: 90%"></div>
+                </div>
+              </article>
+              <article>
+                <div class="skill-name">AutoCAD</div>
+                <div class="skill-bar">
+                  <div class="skill-per" per="60%" style="width: 60%"></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+    src="./assets/arrow.png"
+    alt="Arrow icon"
+    class="icon arrow"
+    onclick="location.href='./#courses'"
+    />
+    </section>
+
+   
+    
+
+    <section id="courses">
+      <p class="section__text__p1"></p>
+      <h1 class="title">Courses</h1>
+      <div class="courses-container">
+          <!-- Add courses here -->
+          <!--<div class="course">
+              <div class="image-container" onclick="showOverlay()" onmouseover="displayMessage()" onmouseout="hideMessage()">
+                  <img src="./assets/warrior_banded_logo.jpg" alt="Course 1" class="course-img">
+                  <div class="click-message hidden">Click</div>
+              </div>
+              <h2 class="course-title">Course 1 Title</h2>
+              <p class="course-description">Course 1 Description goes here...</p>
+          </div>
+          <!-Add more courses as needed -->
+      <!--</div>--->
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      /> 
+  </section>
+  
+  <div id="overlay" class="hidden" onclick="hideOverlay()">
+      <div id="overlay-content">
+          <h2>Welcome to My Course</h2>
+          <p>hello</p>
+      </div>
+  </div>
+
+
+    <section id="projects">
+      <p class="section__text__p1">Browse My</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-management.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <!--<button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button> -->
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-management.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-management.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-management.png"
+                alt="Project 4"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Four</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='./as'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo 
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+
+    
+    <section id="contact">
+      <p class="section__text__p1"></p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email (1).png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:examplemail@gmail.com">iftekharhasan05@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin (1).png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+        </div>
+      </div>
+
+      <a href="#" class="top">Back to Top</a>  
+
+    </section>
+    <footer>
+      <form id="emailForm">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="input-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <input type="submit" value="Send">
+      </form>
+      <div class="copyright">
+        <p>Copyright &#169; 2024 Iftekhar Hasan. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
