@@ -1,14 +1,33 @@
-const typed = new Typed('.multiple_text', {
-  string: ['Fronted Developer','YouTuber','Blogger'],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true
-});
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show');
+      }
+    });
+  });
+  
+  const hiddenElements = document.querySelectorAll('.sliding');
+  hiddenElements.forEach((el) => observer.observe(el));
+  
 
 
 
 
+
+const textElement = document.getElementById('title1');
+  const text = "Iftekhar Hasan";  
+  let i = 0;
+  function typeWriter() {
+    if (i < text.length) {
+      textElement.innerText += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100); 
+    }
+  }
+  
+ 
 
 function showOverlay() {
   var overlay = document.getElementById("overlay");
