@@ -61,11 +61,21 @@ a,
   transition: all 0.3s ease;
 }
 
-.navbar a:hover {
+.nav-icon {
+  height: 40px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.nav-icon:hover {
+  transform: scale(1.4);
+}
+
+/* .navbar a:hover {
   background-color: #ffffff;
   color: #197dd4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 #check {
   display: none;

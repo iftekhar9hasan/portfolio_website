@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IH</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'> 
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">IH</a>
+    <input type="checkbox" id="check">
+    <label for="check" class="icon-nav">
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <i class='bx bx-x' id="close-icon"></i>
+    </label>
+    <nav class="navbar">
+        <a href="index.html"><img src="assets/ABOUT.svg" alt="Home" class="nav-icon" title="About Me"/></a>
+        <a href="skills.html"><img src="assets/SKILLS.svg" alt="Skills" class="nav-icon" title="Skills"/></a>
+        <a href="projects.html"><img src="assets/PROJECTS.svg" alt="Projects" class="nav-icon" title="Projects"/></a>
+        <a href="contact.html"><img src="assets/CONTACTS.svg" alt="Contact" class="nav-icon" title="Contact Me"/></a>
+      </nav>   
+      
+  </header>
+
+  <section id="contact" class="sliding">
+    <p class="section__text__p1"></p>
+    <h1 class="title">Contact Me</h1>
+    <footer>
+      <form id="emailForm">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="input-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <input type="submit" value="Send">
+      </form>
+      <div class="copyright">
+        <p>Copyright &#169; 2024 Iftekhar Hasan. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </section>
+ 
+  <script src="script.js"></script>
+
+</body>
+</html>
