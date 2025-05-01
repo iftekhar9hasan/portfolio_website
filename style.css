@@ -40,7 +40,7 @@ a,
   justify-content: center;
   align-items: center;
   z-index: 100;
-  background: #197dd4;
+  background: #579bdf;
   backdrop-filter: blur(50px);
 }
 
@@ -367,6 +367,13 @@ h3.title1 {
   padding: 1.5rem;
   flex: 1;
   background: transparent;
+  text-align: center;
+}
+
+.details-container p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #444;
   text-align: center;
 }
 
