@@ -6,7 +6,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -34,31 +35,20 @@ a,
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.3rem 10%;
+  padding: 2rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 100;
   background: #197dd4;
   backdrop-filter: blur(50px);
 }
 
-.logo {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.navbar a {
-  font-size: 1.5rem;
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 2.5rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 }
 
 .nav-icon {
@@ -70,12 +60,6 @@ a,
 .nav-icon:hover {
   transform: scale(1.4);
 }
-
-/* .navbar a:hover {
-  background-color: #ffffff;
-  color: #197dd4;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-} */
 
 #check {
   display: none;
@@ -101,7 +85,7 @@ a,
   width: 100%;
   height: 80%;
   z-index: -1;
-  background: #1665aa;
+  background: #a0cfff;
 }
 
 /* SECTIONS */
@@ -131,6 +115,11 @@ section {
 
 /* PROFILE SECTION */
 
+/* .parallax-layer {
+  transition: transform 0.1s linear;
+  display: inline-block;
+} */
+
 #profile {
   display: flex;
   justify-content: center;
@@ -156,40 +145,66 @@ section {
 
 /*===*/
 
-h2 {
+/* === */
+.animated-text {
   position: relative;
-  font-size: 2vw;
-  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  color: transparent;
+  width: fit-content;
+  margin: 0 auto;
   white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
-h2::before {
+.animated-text::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
   left: 0;
-  width: 0;
-  height: 100%;
-  color: #1665aa;
+  white-space: nowrap;
   overflow: hidden;
-  animation: animate 6s linear infinite;
+  color: #197dd4;
+  width: 0;
+  border-right: 2px solid #2a150d;
+  animation: typingLoop 8s steps(30, end) infinite,
+    blinkCursor 1s step-end infinite;
 }
 
-@keyframes animate {
-  0%,
-  40%,
+@keyframes typingLoop {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
   100% {
     width: 0;
   }
-  40%,
-  70% {
-    width: 100%;
+}
+
+@keyframes blinkCursor {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #197dd4;
   }
 }
-/*===*/
+
+/* === */
 
 .section__text__p1 {
   text-align: center;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .section__text__p2 {
@@ -215,16 +230,20 @@ h3.title1 {
 
 .title_name {
   font-size: 2em;
-  color: #ffffff;
+  color: #197dd4;
   font-weight: bold;
   margin: 0;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 #socials-container {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.1rem;
 }
 
 #socials-container .icon {
@@ -235,8 +254,14 @@ h3.title1 {
   transition: transform 0.3s ease;
 }
 
-#socials-container .icon:hover {
+/* #socials-container .icon:hover {
   transform: scale(1.1);
+} */
+
+/* Subtle Glow on Social Icons */
+#socials-container .icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #00e0ff;
 }
 
 .section__pic-container {
@@ -372,7 +397,18 @@ h3.title1 {
   margin: 0 10rem;
 }
 
-.card {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -391,6 +427,23 @@ h3.title1 {
 
 .card:hover {
   transform: translateY(-3px) scale(1.3);
+} */
+
+/* New card hovering */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #1665aa;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 40px rgba(22, 101, 170, 0.3);
 }
 
 .basic-grid {
@@ -425,6 +478,13 @@ h3.title1 {
 
 #projects h2 {
   color: rgb(22, 178, 184);
+}
+
+/* Project Card Hovering */
+.project-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgb(54, 56, 56);
+  transition: 0.3s ease;
 }
 
 .projects-section {

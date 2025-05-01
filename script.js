@@ -16,7 +16,6 @@ const observer = new IntersectionObserver((entries) => {
 
 
 
-
 const textElement = document.getElementById('title1');
   const text = "Iftekhar Hasan";  
   let i = 0;
@@ -74,3 +73,28 @@ function toggleMenu() {
   menu.classList.toggle("open");
   icon.classList.toggle("open");
 }
+
+
+// This is for the Profile Picture
+document.addEventListener("mousemove", (e) => {
+  document.querySelectorAll(".parallax-layer").forEach((el) => {
+    const speed = el.getAttribute("data-speed");
+    const x = (window.innerWidth - e.pageX * speed) / 100;
+    const y = (window.innerHeight - e.pageY * speed) / 100;
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+
+// for Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
