@@ -457,7 +457,7 @@ h3.title1 {
 
 /* PROJECTS SECTION */
 
-#projects {
+/* #projects {
   position: relative;
   margin: 0 15rem;
 }
@@ -466,7 +466,6 @@ h3.title1 {
   color: rgb(22, 178, 184);
 }
 
-/* Project Card Hovering */
 .project-card:hover {
   transform: scale(1.07);
   box-shadow: 0 8px 20px rgb(54, 56, 56);
@@ -547,95 +546,219 @@ h3.title1 {
   width: 100%;
   height: 100%;
   display: block;
+} */
+
+#projects {
+  position: relative;
+  margin: 0 5%;
+  padding: 10vh 5;
+}
+
+.projects-grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* Responsive grid */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Refined Project Card */
+.project-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Stack image and info */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0; /* Remove previous padding */
+  margin: 0; /* Remove previous margin */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  flex: none; /* Reset flex */
+  max-width: 100%; /* Ensure image is contained */
+  height: 200px; /* Fixed height for consistency */
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area, might crop */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 1.5rem; /* Consistent padding */
+  flex-grow: 1; /* Allow info to grow */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info h3 {
+  /* Changed from h2 */
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #197dd4;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Push links to bottom */
+}
+
+.tech-stack {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-stack span {
+  font-size: 0.9rem;
+  color: #777;
+  margin-right: 0.5rem;
+}
+
+.tech-stack img {
+  width: 24px; /* Smaller tech icons */
+  height: 24px;
+  margin-right: 0; /* Remove previous margin */
+}
+
+.project-links {
+  margin-top: auto; /* Push to bottom */
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-project {
+  /* Specific button style for projects */
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  background-color: #197dd4;
+  color: #ffffff;
+  border: none;
+  border-radius: 2rem; /* Match other buttons */
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-project:hover {
+  background-color: #135a9e;
+  transform: translateY(-2px);
+  color: #ffffff; /* Ensure text color remains white */
 }
 
 /* CONTACT*/
 
 #contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 10rem;
+  margin: 0 5%; /* Adjusted margin */
+  padding: 10vh 0 15vh 5; /* Add more bottom padding */
+  display: flex; /* Keep flex */
+  flex-direction: column; /* Keep column */
+  align-items: center; /* Center content */
 }
 
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-/* FOOTER SECTION */
-
-footer {
-  margin-bottom: 3rem;
-}
-
-footer p {
-  text-align: center;
+.contact-form-container {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px; /* Limit form width */
+  margin-top: 2rem;
 }
 
 #emailForm {
-  margin: 0 auto;
-  width: 600px;
+  width: 100%; /* Ensure form takes container width */
+  margin: 0; /* Reset margin */
 }
 
 .input-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem; /* Increased spacing */
 }
 
 .input-group label {
-  margin-bottom: 5px;
+  display: block; /* Ensure label is on its own line */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
 }
 
 .input-group input[type="text"],
 .input-group input[type="email"],
 .input-group textarea {
-  border-radius: 15px;
-  background-color: beige;
-  background-position: left top;
-  background-repeat: repeat;
   width: 100%;
-  padding: 10px;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.copyright {
-  margin-top: 20px;
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group textarea:focus {
+  border-color: #197dd4;
+  box-shadow: 0 0 0 3px rgba(25, 125, 212, 0.2);
+  outline: none;
 }
 
-#emailForm input[type="submit"] {
-  margin-top: 20px;
-  padding: 15px;
-  font-size: 18px;
-  background: beige;
-  color: #070000;
-  border: black;
-  border-radius: 25px;
+.input-group textarea {
+  resize: vertical; /* Allow vertical resize only */
+}
+
+.btn-submit {
+  /* Style for the submit button */
+  display: block; /* Make it block level */
+  width: 100%; /* Full width */
+  padding: 0.9rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #197dd4;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem; /* Add margin top */
 }
 
-#emailForm input[type="submit"]:hover {
-  background: rgb(22, 178, 184);
+.btn-submit:hover {
+  background: #135a9e;
+  transform: translateY(-2px);
+}
+
+/* Footer refinement */
+footer {
+  margin-top: 5vh; /* Space above footer */
+  padding: 2rem 0;
+  background-color: #eef2f7; /* Light background for footer */
+  border-top: 1px solid #dce3ec;
+}
+
+.copyright p {
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center; /* Ensure text is centered */
 }
