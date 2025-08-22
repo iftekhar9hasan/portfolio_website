@@ -40,7 +40,9 @@ a,
   justify-content: center;
   align-items: center;
   z-index: 100;
-  background: #579bdf;
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(48, 60, 85, 0.5);
   backdrop-filter: blur(50px);
 }
 
@@ -49,11 +51,10 @@ a,
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  border: 2px solid #ddd;
+  background-color: #5d7496;
+  border: 1px solid #303c55;
   border-radius: 50px;
-  /* padding: 1rem 2rem; */
-  /* background-color: #f8f8f8; */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(2, 12, 27, 0.7);
 }
 
 .nav-icon {
@@ -100,9 +101,9 @@ a,
   top: 0;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 70%;
   z-index: -1;
-  background: #a0cfff;
+  background-color: #0a192f;
 }
 
 /* SECTIONS */
@@ -186,9 +187,9 @@ section {
   left: 0;
   white-space: nowrap;
   overflow: hidden;
-  color: #197dd4;
+  color: #e0e0e0;
   width: 0;
-  border-right: 2px solid #2a150d;
+  border-right: 2px solid #197dd4;
   animation: typingLoop 8s steps(30, end) infinite,
     blinkCursor 1s step-end infinite;
 }
@@ -214,7 +215,7 @@ section {
     border-color: transparent;
   }
   50% {
-    border-color: #197dd4;
+    border-color: #e0e0e0;
   }
 }
 
@@ -224,6 +225,8 @@ section {
   text-align: center;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  font-size: 1.1rem;
+  color: #8892b0;
 }
 
 .section__text__p2 {
@@ -249,7 +252,7 @@ h3.title1 {
 
 .title_name {
   font-size: 2em;
-  color: #197dd4;
+  color: #e0e0e0;
   font-weight: bold;
   margin: 0;
   margin-bottom: 0.5rem;
@@ -257,12 +260,12 @@ h3.title1 {
 }
 
 #socials-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 0.1rem;
+  gap: 0;
 }
 
 #socials-container .icon {
@@ -271,6 +274,8 @@ h3.title1 {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin: 0 0.5rem;
+  padding: 0 1;
 }
 
 /* #socials-container .icon:hover {
@@ -317,14 +322,17 @@ h3.title1 {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
+  padding: 0.8rem 1.5rem;
+  width: auto;
+  min-width: 8rem;
   border-radius: 2rem;
+  cursor: pointer;
 }
 
 .btn-color-1,
@@ -339,81 +347,172 @@ h3.title1 {
 
 .btn-color-1,
 .btn-color-2:hover {
-  background: #ffffff;
-  color: rgb(99, 38, 38);
+  background: #5d7496;
+  color: #e0e0e0;
 }
 
 .btn-color-2 {
-  background: none;
+  background-color: #5d7496;
+  border: rgb(255, 255, 255) 0.1rem solid;
+  color: #e0e0e0;
+  border: 1px solid #5d7496;
 }
 
 .btn-color-2:hover {
+  background-color: transparent;
   border: rgb(255, 255, 255) 0.1rem solid;
+  /* transform: scale(1.2); */
+  box-shadow: 0 0 10px #00e0ff;
 }
 
 .btn-container {
   gap: 1rem;
 }
 
-/* ABOUT SECTION */
+/*'ABOUT ME' SECTION */
 
 #about {
   position: relative;
-  margin: 0 10rem;
+  margin-left: auto; /* These two lines are the key to centering */
+  margin-right: auto;
+  padding-left: 5%; /* This creates the empty space on the left */
+  padding-right: 5%; /* This creates the empty space on the right */
 }
 
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.about-details-container {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
+.about-content-wrapper {
   display: flex;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
-.about-pic {
-  border-radius: 2rem;
+/* Left Column */
+.about-text-container {
+  flex-basis: 50%;
+  padding-top: 1rem;
 }
 
-.details-container {
-  padding: 1.5rem;
-  flex: 1;
-  background: transparent;
-  text-align: center;
+.about-text-container p {
+  color: var(--text-medium);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-.details-container p {
-  margin: 0.5rem 0;
+/* Right Column --- */
+
+.edark-container {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  height: 100%;
+  background: var(--bg-light-navy);
+  border: 1px solid #303c55;
+  border-radius: 12px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.edark-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.edark-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.edark-school {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #0c5449 0%, #ffcc33 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.edark-verified {
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+}
+
+.edark-location {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+}
+
+.edark-location i {
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+.edark-dates {
+  margin-top: 1%;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 16px;
+}
+
+.edark-degree {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-light);
+}
+
+.edark-gpa {
+  display: inline-block;
+  background: rgba(25, 125, 212, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+  border: 1px solid var(--accent-blue);
+}
+
+.edark-gpa span {
+  font-weight: bold;
+  color: var(--accent-blue);
+}
+
+.edark-subtitle {
   font-size: 1rem;
-  color: #444;
-  text-align: center;
+  margin-bottom: 12px;
+  color: var(--text-light);
+  font-weight: 500;
 }
 
-.about-details-container p {
-  color: #000000;
+.edark-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.section-container {
-  gap: 4rem;
-  height: 80%;
+.edark-chip {
+  padding: 6px 12px;
+  background: #5d7496;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  transition: background 0.2s, border-color 0.2s;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
-
-.text-container p {
-  color: rgb(0, 0, 0);
-  font-size: 18px;
+.edark-chip:hover {
+  background: transparent;
+  color: #3f3f3e;
+  border-color: #0c5449;
 }
 
 /*skills*/
