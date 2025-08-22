@@ -108,7 +108,7 @@ a,
 
 /* SECTIONS */
 section {
-  padding-top: 20vh;
+  padding-top: 10vh;
   padding-bottom: 20vh;
   box-sizing: border-box;
   min-height: fit-content;
@@ -237,6 +237,7 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 h3.title1 {
@@ -372,6 +373,7 @@ h3.title1 {
 /*'ABOUT ME' SECTION */
 
 #about {
+  margin-top: 1%;
   position: relative;
   margin-left: auto; /* These two lines are the key to centering */
   margin-right: auto;
@@ -518,49 +520,78 @@ h3.title1 {
 /*skills*/
 
 #skills {
-  position: relative;
-  margin: 0 10rem;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 0 auto;
+  /* padding: 15vh 5%;
+  min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.skills-container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
 }
 
-/* New card hovering */
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+.skills-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills-category {
+  background-color: var(--bg-light-navy);
+  border: 1px solid #303c55;
   border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #1665aa;
+  padding: 1.5rem 2rem;
 }
 
-.card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 40px rgba(22, 101, 170, 0.3);
+.category-title {
+  color: var(--accent-blue);
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #303c55;
+  padding-bottom: 0.75rem;
 }
 
-.basic-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 3fr));
+.skill-item {
+  display: flex;
+  align-items: center;
   gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-.icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  margin: 0 auto 10px;
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-item:hover {
+  background-color: rgba(25, 125, 212, 0.1);
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.skill-item span {
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.no-items-placeholder {
+  color: var(--text-medium);
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .arrow {

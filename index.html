@@ -53,7 +53,7 @@
 
   </section>
 
-  <section id="about">
+  <section id="about" class="sliding">
   <h1 class="title">About Me</h1>
   
   <div class="about-content-wrapper">
@@ -138,29 +138,57 @@
 </section>
 
 
+<section id="skills" class="sliding">
+  <h1 class="title">Technical Skills</h1>
+    <div class="skills-container">
 
-  <section id="skills" class="sliding">
-    <p class="section__text__p1"></p>
-    <h1 class="title">Skills<br><br></h1>
-    <div class="basic-grid">
-      <div class="card"><img src="assets/c-plusplus.svg" class="icon" alt="Icon">C++</div>
-      <div class="card"><img src="assets/python.svg" class="icon" alt="Icon">Python</div>
-      <div class="card"><img src="assets/html-5.svg" class="icon" alt="Icon">HTML</div>
-      <div class="card"><img src="assets/css-3.svg" class="icon" alt="Icon">CSS</div>
-      <div class="card"><img src="assets/java.svg" class="icon" alt="Icon">Java</div>
-      <div class="card"><img src="assets/javascript.svg" class="icon" alt="Icon">JavaScript</div>
-      <div class="card"><img src="assets/siemens.jpg" class="icon" alt="Icon">Siemens NX</div>
-      <div class="card"><img src="assets/Android_Studio_Logo.svg" class="icon" alt="Icon">Android Studio</div>
-      <div class="card"><img src="assets/sql.svg" class="icon" alt="Icon">SQL</div>
-      <div class="card"><img src="assets/visual-studio.svg" class="icon" alt="Icon">VS</div>
-      <div class="card"><img src="assets/icons8-pycharm-48.png" class="icon" alt="Icon">PyCharm</div>
-      <div class="card"><img src="assets/TechnicalWriting.png" class="icon" alt="Icon">Technical Writing</div>
-      <div class="card"><img src="assets/snap.png" class="icon" alt="Icon">SNAP</div>
+    <!-- Column 1: Programming Languages -->
+    <div class="skills-column">
+      <div class="skills-category">
+        <h3 class="category-title">Programming Languages</h3>
+        <div class="skill-item"><img src="assets/python.svg" class="skill-icon" alt="Python"><span>Python</span></div>
+        <div class="skill-item"><img src="assets/javascript.svg" class="skill-icon" alt="JavaScript"><span>JavaScript</span></div>
+        <div class="skill-item"><img src="assets/java.svg" class="skill-icon" alt="Java"><span>Java</span></div>
+        <div class="skill-item"><img src="assets/c-plusplus.svg" class="skill-icon" alt="C++"><span>C++</span></div>
+        <div class="skill-item"><img src="assets/html-5.svg" class="skill-icon" alt="HTML5"><span>HTML</span></div>
+        <div class="skill-item"><img src="assets/css-3.svg" class="skill-icon" alt="CSS3"><span>CSS</span></div>
+      </div>
     </div>
 
-    <img src="./assets/arrow.png" alt="vertical line" class="icon arrow" onclick="location.href='./#projects'">
+    <!-- Column 2: Frameworks & Libraries -->
+    <div class="skills-column">
+      <div class="skills-category">
+        <h3 class="category-title">Frameworks & Libraries</h3>
+        <!-- Add relevant framework/library icons and names here when you have them -->
+        <p class="no-items-placeholder">Experience with various libraries for web development, data analysis, and more.</p>
+      </div>
+    </div>
 
-  </section>
+    <!-- Column 3: Databases -->
+    <div class="skills-column">
+       <div class="skills-category">
+        <h3 class="category-title">Databases</h3>
+        <div class="skill-item"><img src="assets/sql.svg" class="skill-icon" alt="SQL"><span>SQL</span></div>
+      </div>
+    </div>
+
+    <!-- Column 4: Developer Tools & Platforms -->
+    <div class="skills-column">
+      <div class="skills-category">
+        <h3 class="category-title">Developer Tools & Platforms</h3>
+        <div class="skill-item"><img src="assets/visual-studio.svg" class="skill-icon" alt="Visual Studio"><span>Visual Studio</span></div>
+        <div class="skill-item"><img src="assets/icons8-pycharm-48.png" class="skill-icon" alt="PyCharm"><span>PyCharm</span></div>
+        <div class="skill-item"><img src="assets/Android_Studio_Logo.svg" class="skill-icon" alt="Android Studio"><span>Android Studio</span></div>
+        <div class="skill-item"><img src="assets/siemens.jpg" class="skill-icon" alt="Siemens NX"><span>Siemens NX</span></div>
+        <div class="skill-item"><img src="assets/TechnicalWriting.png" class="skill-icon" alt="Technical Writing"><span>Technical Writing</span></div>
+        <div class="skill-item"><img src="assets/snap.png" class="skill-icon" alt="SNAP"><span>SNAP</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <img src="./assets/arrow.png" alt="Arrow pointing to next section" class="icon arrow" onclick="location.href='./#projects'">
+</section>
 
 
   <section id="projects" class="sliding">
