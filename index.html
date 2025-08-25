@@ -1,371 +1,528 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IH</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mediaqueries.css">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Iftekhar Hasan - Computer Science Graduate specializing in web development, machine learning, and software engineering.">
+    <meta name="keywords" content="Iftekhar Hasan, Computer Science, Web Developer, Software Engineer, Portfolio">
+    <meta name="author" content="Iftekhar Hasan">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Iftekhar Hasan - Computer Science Graduate">
+    <meta property="og:description" content="Passionate about building innovative web applications and solving complex technical challenges.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iftekharhasan.dev">
+    
+    <title>Iftekhar Hasan - Computer Science Graduate</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 </head>
 <body>
-  <header class="header">
-    <!-- <a href="#" class="logo">IH</a> -->
-    <input type="checkbox" id="check">
-    <label for="check" class="icon-nav">
-      <i class='bx bx-menu' id="menu-icon"></i>
-      <i class='bx bx-x' id="close-icon"></i>
-    </label>
-    <nav class="navbar">
-      <a href="#profile"><img src="assets/HOME.svg" alt="Home" class="nav-icon" title="Home" /></a>
-      <a href="#about"><img src="assets/Education.svg" alt="About" class="nav-icon" title="About Me" /></a>
-      <a href="#skills"><img src="assets/SKILLS.svg" alt="Skills" class="nav-icon" title="Skills" /></a>
-      <a href="#projects"><img src="assets/PROJECTS.svg" alt="Projects" class="nav-icon" title="Projects" /></a>
-      <a href="#contact"><img src="assets/CONTACTS.svg" alt="Contact" class="nav-icon" title="Contact Me" /></a>
-    </nav>    
-  </header>
-
-  <section id="profile" class="sliding">
-    <div id="particles-js"></div>
-    <div class="section__pic-container">
-      <img src="./assets/iftekharH.png" alt="Iftekhar Hasan profile picture">
-    </div>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <div class="section__text">
-      <p class="section__text__p1">Hi there, I'm</p>
-      <div class="title-container">
-        <h3 class="title_name">Iftekhar Hasan</h3>
-      </div>
-      <!-- <h2 data-text="Computer Science'25">Computer Science'25</h2> -->
-      <h2 class="animated-text" data-text="Computer Science '25">Computer Science '25</h2>
-
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/Hasan.Iftekhar.resume.pdf')">Resume</button>
-      </div>
-      <div id="socials-container">
-        <img src="./assets/linkedin (1).png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/iftekharhasan09'">
-        <img src="./assets/github (2).png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/iftekhar9hasan'">
-        <img src="./assets/facebook.png" alt="My Github profile" class="icon" onclick="location.href='https://www.facebook.com/lazylad.ifti'">
-      </div>
-    </div>
-
-    <img src="./assets/arrow.png" alt="vertical line" class="icon arrow" onclick="location.href='./#about'">
-
-  </section>
-
-  <section id="about" class="sliding">
-  <h1 class="title">About Me</h1>
-  
-  <div class="about-content-wrapper">
-    <div class="about-text-container">
-      <p>
-        I recently graduated with a degree in Computer Science from Wayne State University, 
-            and I’m now eager to take the next step in my career. I’m passionate about applying 
-            my knowledge to real-world problems and continuously learning new technologies. I 
-            thrive in fast-paced, collaborative environments and am excited to contribute fresh 
-            ideas, a strong work ethic, and a drive for continuous improvement. I'm actively 
-            seeking opportunities where I can make an impact, grow as a developer, and help 
-            build innovative solutions.
-      </p>
-      <p>
-        I’m passionate about building interactive web apps with React,
-            exploring machine learning, and crafting intuitive user experiences.
-            Currently, I’m pursuing a B.S. in Computer Science and working on
-            a Windows-style portfolio project to showcase my skills.
-      </p>
-    </div>
-
-    <div class="edark-container">
-      <div class="edark-header">
-        <img src="./assets/Wayne_State_logo.svg.png" alt="Wayne State University Logo" class="edark-logo">
-        <div>
-          <div class="edark-school">
-            Wayne State University
-            <i class="bx bxs-badge-check edark-verified" title="Verified"></i>
-          </div>
-        </div>
-      </div>
-      <div class="edark-location">
-            <i class='bx bxs-map'></i> Detroit, MI
-      </div>
-      <div class="edark-dates">
-        September 2021 - July 2025
-      </div>
-
-      <div class="edark-degree">
-        Bachelor of Science in Computer Science
-      </div>
-
-      <div class="edark-gpa">
-        GPA: <span>3.72</span>
-      </div>
-
-      <div class="edark-subtitle">Relevant Coursework:</div>
-      <div class="edark-chips">
-        <!-- Row 1 -->
-        <div class="edark-chip">Capstone Project</div>
-        <div class="edark-chip">Deep Learning</div>
-        <div class="edark-chip">Software Engineering</div>
-        <div class="edark-chip">Data Structures & Algorithms</div>
-
-        <!-- Row 2 -->
-        <div class="edark-chip">Algorithm Analysis</div>
-        <div class="edark-chip">Object-Oriented Programming</div>
-        <div class="edark-chip">Database Management Systems</div>
-        <div class="edark-chip">Operating Systems</div>
-
-        <!-- Row 3 -->
-        <div class="edark-chip">Web Development</div>
-        <div class="edark-chip">Mobile App Development</div>
-        <div class="edark-chip">Cyber Security</div>
-        <div class="edark-chip">Computer Architechture & Assembly Language</div>
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <!-- Logo/Name -->
+                <a href="#hero" class="nav-logo" aria-label="Iftekhar Hasan - Home">
+                    <span class="logo-text">IH</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu" role="menubar">
+                    <li role="none">
+                        <a href="#hero" class="nav-link" role="menuitem" data-section="hero">
+                            <!-- <span class="nav-number">01.</span> -->
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#about" class="nav-link" role="menuitem" data-section="about">
+                            <!-- <span class="nav-number">02.</span> -->
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#skills" class="nav-link" role="menuitem" data-section="skills">
+                            <!-- <span class="nav-number">03.</span> -->
+                            <span class="nav-text">Skills</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#projects" class="nav-link" role="menuitem" data-section="projects">
+                            <!-- <span class="nav-number">04.</span> -->
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#contact" class="nav-link" role="menuitem" data-section="contact">
+                            <!-- <span class="nav-number">05.</span> -->
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
         
-        <!-- Row 4 -->
-        <div class="edark-chip">C++ Programming</div>
-        <div class="edark-chip">Java Programming</div>
-        <div class="edark-chip">Python programming</div>
-        <div class="edark-chip">Discrete Structures</div>
-
-        <!-- Row 5 -->
-        <div class="edark-chip">Applied Statistics & Probability</div>
-        <div class="edark-chip">Calculus</div>
-        <div class="edark-chip">Linear Algebra</div>
-      </div>
-    </div>
-  </div>
-
-  <img src="./assets/arrow.png" alt="Arrow pointing to next section" class="icon arrow" onclick="location.href='./#skills'">
-</section>
-
-
-<section id="skills" class="sliding">
-  <h1 class="title">Technical Skills</h1>
-    <div class="skills-container">
-
-    <!-- Column 1: Programming Languages -->
-    <div class="skills-column">
-      <div class="skills-category">
-        <h3 class="category-title">Programming Languages</h3>
-        <div class="skill-item"><img src="assets/python.svg" class="skill-icon" alt="Python"><span>Python</span></div>
-        <div class="skill-item"><img src="assets/javascript.svg" class="skill-icon" alt="JavaScript"><span>JavaScript</span></div>
-        <div class="skill-item"><img src="assets/java.svg" class="skill-icon" alt="Java"><span>Java</span></div>
-        <div class="skill-item"><img src="assets/c-plusplus.svg" class="skill-icon" alt="C++"><span>C++</span></div>
-        <div class="skill-item"><img src="assets/html-5.svg" class="skill-icon" alt="HTML5"><span>HTML</span></div>
-        <div class="skill-item"><img src="assets/css-3.svg" class="skill-icon" alt="CSS3"><span>CSS</span></div>
-      </div>
-    </div>
-
-    <!-- Column 2: Frameworks & Libraries -->
-    <div class="skills-column">
-      <div class="skills-category">
-        <h3 class="category-title">Frameworks & Libraries</h3>
-        <!-- Add relevant framework/library icons and names here when you have them -->
-        <p class="no-items-placeholder">Experience with various libraries for web development, data analysis, and more.</p>
-      </div>
-    </div>
-
-    <!-- Column 3: Databases -->
-    <div class="skills-column">
-       <div class="skills-category">
-        <h3 class="category-title">Databases</h3>
-        <div class="skill-item"><img src="assets/sql.svg" class="skill-icon" alt="SQL"><span>SQL</span></div>
-      </div>
-    </div>
-
-    <!-- Column 4: Developer Tools & Platforms -->
-    <div class="skills-column">
-      <div class="skills-category">
-        <h3 class="category-title">Developer Tools & Platforms</h3>
-        <div class="skill-item"><img src="assets/visual-studio.svg" class="skill-icon" alt="Visual Studio"><span>Visual Studio</span></div>
-        <div class="skill-item"><img src="assets/icons8-pycharm-48.png" class="skill-icon" alt="PyCharm"><span>PyCharm</span></div>
-        <div class="skill-item"><img src="assets/Android_Studio_Logo.svg" class="skill-icon" alt="Android Studio"><span>Android Studio</span></div>
-        <div class="skill-item"><img src="assets/siemens.jpg" class="skill-icon" alt="Siemens NX"><span>Siemens NX</span></div>
-        <div class="skill-item"><img src="assets/TechnicalWriting.png" class="skill-icon" alt="Technical Writing"><span>Technical Writing</span></div>
-        <div class="skill-item"><img src="assets/snap.png" class="skill-icon" alt="SNAP"><span>SNAP</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <img src="./assets/arrow.png" alt="Arrow pointing to next section" class="icon arrow" onclick="location.href='./#projects'">
-</section>
-
-
-  <section id="projects" class="sliding">
-    <p class="section__text__p1">Browse My Recent Work</p>
-    <h1 class="title">Projects</h1>
-    <div class="projects-grid-container">
-  
-      <!-- Project 1 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="assets/Employe_Management.png" alt="CrossCut Employee Management System">
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav-overlay" aria-hidden="true">
+            <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobile-nav-menu" role="menubar">
+                    <li role="none">
+                        <a href="#hero" class="mobile-nav-link" role="menuitem" data-section="hero">
+                            <!-- <span class="nav-number">01.</span> -->
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#about" class="mobile-nav-link" role="menuitem" data-section="about">
+                            <!-- <span class="nav-number">02.</span> -->
+                            <span class="nav-text">About</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#skills" class="mobile-nav-link" role="menuitem" data-section="skills">
+                            <!-- <span class="nav-number">03.</span> -->
+                            <span class="nav-text">Skills</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#projects" class="mobile-nav-link" role="menuitem" data-section="projects">
+                            <!-- <span class="nav-number">04.</span> -->
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="#contact" class="mobile-nav-link" role="menuitem" data-section="contact">
+                            <!-- <span class="nav-number">05.</span> -->
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="project-info">
-          <h3>CrossCut Employee Management System</h3>
-          <div class="tech-stack">
-            <span>Made with:</span>
-            <img src="assets/python.svg" alt="Python" title="Python">
-          </div>
-          <p>A user-friendly platform for employers and employees featuring secure logins, dual authentication, registration, messaging, and job management to improve efficiency for Crosscut Landscaping.</p>
-          <div class="project-links">
-            <a href="https://github.com/Sadman988/Group-Project-3---Employee-Management-System" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero section" aria-label="Introduction">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-greeting">Hi, my name is</p>
+                        <h1 class="hero-name">
+                            <span class="typing-text" data-text="Iftekhar Hasan">Iftekhar Hasan</span>
+                        </h1>
+                        <h2 class="hero-title">Computer Science '25</h2>
+                        <p class="hero-description">
+                            I'm a passionate software engineer specializing in building exceptional digital experiences. 
+                            Currently focused on creating innovative web applications and solving complex technical challenges.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="assets/Hasan.Iftekhar.resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                View Resume
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="assets/iftekharH.png" alt="Iftekhar Hasan - Professional headshot" class="profile-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-social">
+                    <a href="https://www.linkedin.com/in/iftekharhasan09" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/iftekhar9hasan" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/lazylad.ifti" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+                        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <a href="#about" class="scroll-link" aria-label="Scroll to about section">
+                        <span class="scroll-text">Scroll Down</span>
+                        <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 13l3 3 7-7"/>
+                            <path d="M7 6l3 3 7-7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about section" aria-label="About me">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">01.</span>
+                        About Me
+                    </h2>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I recently graduated with a degree in Computer Science from Wayne State University, 
+                            and I'm now eager to take the next step in my career. I'm passionate about applying 
+                            my knowledge to real-world problems and continuously learning new technologies.
+                        </p>
+                        <p>
+                            I thrive in fast-paced, collaborative environments and am excited to contribute fresh 
+                            ideas, a strong work ethic, and a drive for continuous improvement. I'm actively 
+                            seeking opportunities where I can make an impact, grow as a developer, and help 
+                            build innovative solutions.
+                        </p>
+                        <p>
+                            My main focus these days is building accessible, inclusive products and digital 
+                            experiences for a variety of clients. I also recently launched a course that covers 
+                            everything you need to build a web app with the Jamstack.
+                        </p>
+                    </div>
+                    
+                    <div class="education-card">
+                        <div class="education-header">
+                            <img src="assets/Wayne_State_logo.svg.png" alt="Wayne State University Logo" class="university-logo">
+                            <div class="education-info">
+                                <h3 class="university-name">
+                                    Wayne State University
+                                    <svg class="verified-badge" viewBox="0 0 24 24" fill="currentColor" aria-label="Verified">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </h3>
+                                <p class="education-location">
+                                    <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                    Detroit, MI
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="education-details">
+                            <p class="education-dates">September 2021 - July 2025</p>
+                            <h4 class="degree">Bachelor of Science in Computer Science</h4>
+                            <p class="gpa">GPA: <span class="gpa-value">3.72</span></p>
+                            
+                            <div class="coursework">
+                                <h5 class="coursework-title">Relevant Coursework:</h5>
+                                <div class="coursework-chips">
+                                    <span class="chip">Capstone Project</span>
+                                    <span class="chip">Deep Learning</span>
+                                    <span class="chip">Software Engineering</span>
+                                    <span class="chip">Data Structures & Algorithms</span>
+                                    <span class="chip">Algorithm Analysis</span>
+                                    <span class="chip">Object-Oriented Programming</span>
+                                    <span class="chip">Python</span>
+                                    <span class="chip">Java</span>
+                                    <span class="chip">C++</span>
+                                    <span class="chip">Database Management Systems</span>
+                                    <span class="chip">Operating Systems</span>
+                                    <span class="chip">Web Development</span>
+                                    <span class="chip">Mobile App Development</span>
+                                    <span class="chip">Cyber Security</span>
+                                    <span class="chip">Computer Architecture</span>
+                                    <span class="chip">Applied Statistics & Probability</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="skills section" aria-label="Technical skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">02.</span>
+                        Technical Skills
+                    </h2>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title">Programming Languages</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="assets/python.svg" alt="Python" class="skill-icon">
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/javascript.svg" alt="JavaScript" class="skill-icon">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/java.svg" alt="Java" class="skill-icon">
+                                <span class="skill-name">Java</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/c-plusplus.svg" alt="C++" class="skill-icon">
+                                <span class="skill-name">C++</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/html-5.svg" alt="HTML5" class="skill-icon">
+                                <span class="skill-name">HTML</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/css-3.svg" alt="CSS3" class="skill-icon">
+                                <span class="skill-name">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Frameworks & Libraries</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="assets/react.svg" alt="React" class="skill-icon">
+                                <span class="skill-name">React</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/flask.svg" alt="Flask" class="skill-icon">
+                                <span class="skill-name">Flask</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/nodejs.svg" alt="Node.js" class="skill-icon">
+                                <span class="skill-name">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Databases & Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="assets/sql.svg" alt="SQL" class="skill-icon">
+                                <span class="skill-name">SQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/git.svg" alt="Git" class="skill-icon">
+                                <span class="skill-name">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">Developer Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <img src="assets/visual-studio.svg" alt="Visual Studio" class="skill-icon">
+                                <span class="skill-name">Visual Studio</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/icons8-pycharm-48.png" alt="PyCharm" class="skill-icon">
+                                <span class="skill-name">PyCharm</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="assets/Android_Studio_Logo.svg" alt="Android Studio" class="skill-icon">
+                                <span class="skill-name">Android Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="projects section" aria-label="My projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">03.</span>
+                        Featured Projects
+                    </h2>
+                    <p class="section-subtitle">Some things I've built</p>
+                </div>
+                
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web-development">Web Development</button>
+                    <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                    <button class="filter-btn" data-filter="mobile-development">Mobile</button>
+                    <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+                </div>
+                
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Projects will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="contact section" aria-label="Contact information">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">04.</span>
+                        Get In Touch
+                    </h2>
+                    <p class="section-subtitle">Let's work together</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
+                                <span class="form-error" id="name-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required aria-describedby="email-error">
+                                <span class="form-error" id="email-error" role="alert"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" required aria-describedby="message-error"></textarea>
+                                <span class="form-error" id="message-error" role="alert"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary form-submit">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" aria-hidden="true">Sending...</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Email</h4>
+                                <a href="mailto:iftekharhasan05@gmail.com" class="contact-link">iftekharhasan05@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Location</h4>
+                                <p class="contact-text">Detroit, MI</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M12 1v6m0 6v6"/>
+                                <path d="M1 12h6m6 0h6"/>
+                            </svg>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Status</h4>
+                                <p class="contact-text">Available for opportunities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <h4 class="contact-title">Connect with me</h4>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/iftekharhasan09" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/iftekhar9hasan" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://www.facebook.com/lazylad.ifti" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    &copy; 2025 Iftekhar Hasan. Built with passion and attention to detail.
+                </p>
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+            
+            <button class="back-to-top" aria-label="Back to top" title="Back to top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 15l-6-6-6 6"/>
+                </svg>
+            </button>
         </div>
-      </div>
-  
-      <!-- Project 2 -->
-      <div class="project-card">
-         <div class="project-image">
-           <img src="assets/Stock_Price.png" alt="Stock Price Prediction">
-         </div>
-         <div class="project-info">
-           <h3>Stock Price Prediction</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/python.svg" alt="Python" title="Python">
-             <img src="assets/html-5.svg" alt="HTML" title="HTML">
-             <img src="assets/css-3.svg" alt="CSS" title="CSS">
-             <img src="assets/javascript.svg" alt="JavaScript" title="JavaScript">
-           </div>
-           <p>Full-stack web app predicting stock prices using Flask and an interactive frontend. Trained a two-layer LSTM model on yfinance data with a 60-day window, MSE loss, and Adam optimizer.</p>
-           <div class="project-links">
-             <a href="https://github.com/" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-      <!-- Project 3 -->
-       <div class="project-card">
-         <div class="project-image">
-           <img src="assets/Detroit_Tech_Innov.png" alt="Detroit Tech Innovators Website">
-         </div>
-         <div class="project-info">
-           <h3>Detroit Tech Innovators Web App</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/html-5.svg" alt="HTML" title="HTML">
-             <img src="assets/css-3.svg" alt="CSS" title="CSS">
-           </div>
-           <p>A central digital hub promoting tech education, collaboration, and events in Detroit, showcasing innovation challenges, programs, startup resources, and networking opportunities.</p>
-           <div class="project-links">
-             <a href="https://promodoro-enhancer.netlify.app/" class="btn btn-project" target="_blank" rel="noopener noreferrer">Demo</a>
-             <a href="https://github.com/iftekhar9hasan/Pomodoro-Times" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-       <!-- Project 4 -->
-       <div class="project-card">
-         <div class="project-image">
-           <img src="assets/Pomodoro_screen_01.png" alt="Pomodoro Web Application">
-         </div>
-         <div class="project-info">
-           <h3>Pomodoro Web Application</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/html-5.svg" alt="HTML" title="HTML">
-             <img src="assets/css-3.svg" alt="CSS" title="CSS">
-             <img src="assets/javascript.svg" alt="JavaScript" title="JavaScript">
-           </div>
-           <p>A web-based timer using the Pomodoro Technique to boost productivity. Features customizable settings, background music, and a user-friendly interface. Demonstrates HTML, CSS, and JS skills.</p>
-           <div class="project-links">
-             <a href="https://promodoro-enhancer.netlify.app/" class="btn btn-project" target="_blank" rel="noopener noreferrer">Demo</a>
-             <a href="https://github.com/iftekhar9hasan/Pomodoro-Times" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-       <!-- Project 5 -->
-       <div class="project-card">
-         <div class="project-image">
-           <img src="assets/Discrete.Puzzle.01.png" alt="Discrete Logic Puzzle Game">
-         </div>
-         <div class="project-info">
-           <h3>Discrete Logic Puzzle Game</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/python.svg" alt="Python" title="Python">
-           </div>
-          <p>Developed a logic puzzle game using Python’s Tkinter library and discrete math concepts. Features puzzle generation, row checking, interactive display, input validation, and error handling.</p>
-           <div class="project-links">
-             <a href="https://github.com/iftekhar9hasan/Interactive-Discreate-Logic-Puzzle-Game-" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-       <!-- Project 6 -->
-       <div class="project-card">
-         <div class="project-image">
-           <img src="assets/Snake_Game_01.png" alt="Snake Game">
-         </div>
-         <div class="project-info">
-           <h3>Snake Game</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/java.svg" alt="Java" title="Java">
-           </div>
-          <p>Classic Snake Game developed using Java Swing. Features snake movement on a grid, fruit consumption for growth, arrow key controls, score tracking, collision detection, and game-over state.</p>
-           <div class="project-links">
-             <a href="https://github.com/iftekhar9hasan/SnakeGame" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-       <!-- Project 7 -->
-       <div class="project-card">
-         <div class="project-image">
-           <img src="assets/exploratory.jpg" alt="Exploratory Data Analysis">
-         </div>
-         <div class="project-info">
-           <h3>Exploratory Data Analysis</h3>
-           <div class="tech-stack">
-             <span>Made with:</span>
-             <img src="assets/python.svg" alt="Python" title="Python">
-           </div>
-          <p>Analyzed an auto dataset using Python libraries (matplotlib, statistics, csv)  for data cleaning and statistical analysis. Managed outliers, generated correlation plots, and performed Pearson correlation.</p>
-           <div class="project-links">
-             <a href="https://github.com/iftekhar9hasan/Exploratory-Data-Analysis-for-Auto-Dataset" class="btn btn-project" target="_blank" rel="noopener noreferrer">GitHub</a>
-           </div>
-         </div>
-       </div>
-  
-    </div> <!-- End projects-grid-container -->
-    <img src="./assets/arrow.png" alt="vertical line" class="icon arrow" onclick="location.href='./#contact'">
-  </section>
-
-  <section id="contact" class="sliding">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-form-container">
-      <form id="emailForm" action="mailto:iftekharhasan05@gmail.com" method="post" enctype="text/plain">
-        <div class="input-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="input-group">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="input-group">
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-
-  <footer>
-    <div class="copyright">
-      <p>Copyright &#169; 2025 Iftekhar Hasan. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-
-  <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="app.js"></script>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="scripts/projects-data.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
