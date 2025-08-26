@@ -119,8 +119,8 @@ const techIcons = {
     "Node.js": "assets/nodejs.svg",
     "TensorFlow": "assets/tensorflow.svg",
     "SQLite": "assets/sqlite.svg",
-    "Tkinter": "assets/python.svg", // Using Python icon for Tkinter
-    "Swing": "assets/java.svg", // Using Java icon for Swing
+    "Tkinter": "assets/python.svg", 
+    "Swing": "assets/java.svg", 
     "Matplotlib": "assets/python.svg",
     "Pandas": "assets/python.svg",
     "NumPy": "assets/python.svg"
