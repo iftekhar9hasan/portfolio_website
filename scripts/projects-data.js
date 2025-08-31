@@ -2,11 +2,11 @@
 const projectsData = [
     {
         id: 1,
-        title: "CrossCut Employee Management System",
+        title: "Employee Management System",
         description: "A user-friendly platform for employers and employees featuring secure logins, dual authentication, registration, messaging, and job management to improve efficiency for Crosscut Landscaping.",
         image: "assets/Employe_Management.png",
-        technologies: ["Python", "Flask", "SQLite", "HTML", "CSS"],
-        category: "web-development",
+        technologies: ["Python", "CustomTkinter", "Pillow", "AWS S3", "JSON"],
+        category: "desktop-application",
         links: {
             github: "https://github.com/Sadman988/Group-Project-3---Employee-Management-System",
             demo: null
@@ -119,8 +119,8 @@ const techIcons = {
     "Node.js": "assets/nodejs.svg",
     "TensorFlow": "assets/tensorflow.svg",
     "SQLite": "assets/sqlite.svg",
-    "Tkinter": "assets/python.svg", // Using Python icon for Tkinter
-    "Swing": "assets/java.svg", // Using Java icon for Swing
+    "Tkinter": "assets/python.svg", 
+    "Swing": "assets/java.svg", 
     "Matplotlib": "assets/python.svg",
     "Pandas": "assets/python.svg",
     "NumPy": "assets/python.svg"
