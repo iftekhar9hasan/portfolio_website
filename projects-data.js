@@ -2,11 +2,11 @@
 const projectsData = [
     {
         id: 1,
-        title: "CrossCut Employee Management System",
+        title: "Employee Management System",
         description: "A user-friendly platform for employers and employees featuring secure logins, dual authentication, registration, messaging, and job management to improve efficiency for Crosscut Landscaping.",
         image: "assets/Employe_Management.png",
-        technologies: ["Python", "Flask", "SQLite", "HTML", "CSS"],
-        category: "web-development",
+        technologies: ["Python", "CustomTkinter", "Pillow", "AWS S3", "JSON"],
+        category: "desktop-application",
         links: {
             github: "https://github.com/Sadman988/Group-Project-3---Employee-Management-System",
             demo: null
