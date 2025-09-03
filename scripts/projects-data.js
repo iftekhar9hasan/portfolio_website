@@ -38,8 +38,8 @@ const projectsData = [
         technologies: ["HTML", "CSS", "JavaScript"],
         category: "web-development",
         links: {
-            github: "https://github.com/iftekhar9hasan/detroit-tech-innovators",
-            demo: "https://promodoro-enhancer.netlify.app/"
+            github: "https://github.com/iftekhar9hasan/DETROIT-TECH-INNOVATORS",
+            demo: "https://detroittechinnovators.netlify.app/"
         },
         featured: true,
         status: "completed",
