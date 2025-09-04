@@ -1,5 +1,3 @@
-// ===== MAIN JAVASCRIPT FILE =====
-
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
@@ -205,6 +203,7 @@ function initializeScrollEffects() {
 function initializeProjects() {
     renderProjects();
     initializeProjectFilters();
+    filterProjects('top4');
 }
 
 function renderProjects() {
@@ -285,6 +284,25 @@ function initializeProjectFilters() {
 function filterProjects(filter) {
     const projectCards = document.querySelectorAll('.project-card');
     
+    // Handle Top 4 Projects filter
+    if (filter === 'top4') {
+        projectCards.forEach((card, index) => {
+            if (index < 4) {
+                card.classList.remove('hidden');
+                card.style.display = 'block';
+            } else {
+                card.classList.add('hidden');
+                setTimeout(() => {
+                    if (card.classList.contains('hidden')) {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+        return;
+    }
+
+
     projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
         
