@@ -75,13 +75,7 @@ function initializeNavigation() {
     }
     
     // Throttled scroll listener for performance
-    let scrollTimeout;
-    window.addEventListener('scroll', function() {
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-        scrollTimeout = setTimeout(updateActiveNavLink, 10);
-    });
+    window.addEventListener('scroll', throttle(updateActiveNavLink, 100));
 }
 
 // ===== THEME TOGGLE =====
