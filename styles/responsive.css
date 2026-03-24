@@ -386,16 +386,9 @@
 }
 
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-.project-image img,
-.profile-image,
-.university-logo,
-.skill-icon {
-  will-change: transform;
-}
-
-.project-card,
-.skill-category,
-.education-card {
+.project-card:hover,
+.skill-category:hover,
+.education-card:hover {
   will-change: transform, box-shadow;
 }
 
