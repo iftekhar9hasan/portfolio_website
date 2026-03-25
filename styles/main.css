@@ -1140,10 +1140,11 @@ body {
   }
 
   .hero-social {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: var(--space-xl);
+    position: fixed;
+    left: var(--space-lg);
+    bottom: 0;
+    flex-direction: column;
+    margin-top: 0;
   }
 
   .hero-social::after {
@@ -1240,3 +1241,14 @@ body {
 [data-theme="light"] .nav-link {
   color: var(--text-accent);
 }
+
+/* .hero-social {
+  position: fixed;
+  left: var(--space-lg);
+  bottom: 0;
+  flex-direction: column;
+}
+
+.hero-social::after {
+  display: block;
+} */
