@@ -459,7 +459,8 @@ body {
 .hero-social {
   position: fixed;
   left: var(--space-lg);
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
@@ -467,7 +468,7 @@ body {
 }
 
 .hero-social::after {
-  content: "";
+  content: none;
   width: 1px;
   height: 90px;
   background-color: var(--text-secondary);
@@ -482,7 +483,7 @@ body {
 
 .social-link:hover {
   color: var(--text-accent);
-  transform: translateY(-3px);
+  /* transform: translateY(-3px); */
 }
 
 .social-icon {
