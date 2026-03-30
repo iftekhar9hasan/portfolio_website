@@ -36,7 +36,7 @@ function initializeNavigation() {
                 
                 if (targetSection) {
                     const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                    const targetPosition = targetSection.offsetTop - headerHeight - 600;
                     
                     window.scrollTo({
                         top: targetPosition,
