@@ -1060,7 +1060,7 @@ body {
   color: var(--text-accent);
 }
 
-.back-to-top {
+/* .back-to-top {
   position: fixed;
   bottom: var(--space-lg);
   right: var(--space-lg);
@@ -1090,7 +1090,7 @@ body {
 .back-to-top svg {
   width: 20px;
   height: 20px;
-}
+} */
 
 /* ===== ANIMATIONS ===== */
 @keyframes fadeInUp {
