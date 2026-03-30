@@ -459,26 +459,25 @@ function initializeAnimations() {
 
 // ===== TYPING EFFECT =====
 function initializeTypingEffect() {
-    const typingElement = document.querySelector('.typing-text');
+    // const typingElement = document.querySelector('.typing-text');
     
-    if (!typingElement) return;
+    // if (!typingElement) return;
     
-    const text = typingElement.getAttribute('data-text');
-    const speed = 100; // milliseconds per character
+    // const text = typingElement.getAttribute('data-text');
+    // const speed = 100; // milliseconds per character
     
-    typingElement.textContent = '';
+    // typingElement.textContent = '';
     
-    let i = 0;
-    function typeWriter() {
-        if (i < text.length) {
-            typingElement.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-    }
+    // let i = 0;
+    // function typeWriter() {
+    //     if (i < text.length) {
+    //         typingElement.textContent += text.charAt(i);
+    //         i++;
+    //         setTimeout(typeWriter, speed);
+    //     }
+    // }
     
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 1000);
+    // setTimeout(typeWriter, 1000);
 }
 
 // ===== BACK TO TOP BUTTON =====

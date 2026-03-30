@@ -73,18 +73,6 @@
     display: block;
   }
 
-  /* Hero social positioning for desktop */
-  .hero-social {
-    position: fixed;
-    left: var(--space-lg);
-    bottom: 0;
-    flex-direction: column;
-  }
-
-  .hero-social::after {
-    display: block;
-  }
-
   /* Skills grid for desktop */
   .skills-grid {
     grid-template-columns: repeat(4, 1fr);
