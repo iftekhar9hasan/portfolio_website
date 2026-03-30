@@ -36,7 +36,7 @@ function initializeNavigation() {
                 
                 if (targetSection) {
                     const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight - 600;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
                     
                     window.scrollTo({
                         top: targetPosition,
@@ -118,6 +118,10 @@ function initializeMobileMenu() {
         }
     });
     
+    // Close button inside menu
+    const closeBtn = document.querySelector('.mobile-nav-close-btn');
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+
     // Close menu when clicking on overlay
     mobileNavOverlay.addEventListener('click', function(e) {
         if (e.target === mobileNavOverlay) {
@@ -153,7 +157,7 @@ function openMobileMenu() {
     hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
     
     // Prevent body scroll
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('menu-open');
 }
 
 function closeMobileMenu() {
@@ -171,7 +175,7 @@ function closeMobileMenu() {
     hamburgerLines[2].style.transform = '';
     
     // Restore body scroll
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
 }
 
 // ===== SCROLL EFFECTS =====
@@ -179,16 +183,17 @@ function initializeScrollEffects() {
     const header = document.querySelector('.header');
     
     function updateHeaderOnScroll() {
-        const scrollY = window.scrollY;
-        
-        if (scrollY > 100) {
-            header.style.backgroundColor = 'rgba(10, 25, 47, 0.95)';
-            header.style.backdropFilter = 'blur(20px)';
-        } else {
-            header.style.backgroundColor = 'rgba(10, 25, 47, 0.85)';
-            header.style.backdropFilter = 'blur(10px)';
-        }
+    const scrollY = window.scrollY;
+    const isLight = document.body.getAttribute('data-theme') === 'light';
+
+    if (scrollY > 100) {
+        header.style.backgroundColor = isLight ? 'rgba(255, 255, 255, 0.95)' : 'rgba(10, 25, 47, 0.95)';
+        header.style.backdropFilter = 'blur(20px)';
+    } else {
+        header.style.backgroundColor = isLight ? 'rgba(255, 255, 255, 0.85)' : 'rgba(10, 25, 47, 0.85)';
+        header.style.backdropFilter = 'blur(10px)';
     }
+}
     
     window.addEventListener('scroll', updateHeaderOnScroll);
 }
@@ -639,4 +644,3 @@ if (typeof module !== 'undefined' && module.exports) {
         showNotification
     };
 }
-
