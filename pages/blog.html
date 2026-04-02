@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iftekhar Hasan - Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="../index.html" class="nav-logo" aria-label="Iftekhar Hasan - Home"><span class="logo-text">IH</span></a>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="../index.html" class="nav-link" role="menuitem"><span class="nav-text">Home</span></a></li>
+                    <li role="none"><a href="about.html" class="nav-link" role="menuitem"><span class="nav-text">About</span></a></li>
+                    <li role="none"><a href="skills.html" class="nav-link" role="menuitem"><span class="nav-text">Skills</span></a></li>
+                    <li role="none"><a href="projects.html" class="nav-link" role="menuitem"><span class="nav-text">Projects</span></a></li>
+                    <li role="none"><a href="blog.html" class="nav-link active" role="menuitem"><span class="nav-text">Blog</span></a></li>
+                    <li role="none"><a href="contact.html" class="nav-link" role="menuitem"><span class="nav-text">Contact</span></a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <span class="theme-icon theme-icon-light">☀️</span>
+                    <span class="theme-icon theme-icon-dark">🌙</span>
+                </button>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="mobile-nav-overlay" aria-hidden="true">
+            <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+                <ul class="mobile-nav-menu" role="menubar">
+                    <li role="none"><a href="../index.html" class="mobile-nav-link" role="menuitem"><span class="nav-text">Home</span></a></li>
+                    <li role="none"><a href="about.html" class="mobile-nav-link" role="menuitem"><span class="nav-text">About</span></a></li>
+                    <li role="none"><a href="skills.html" class="mobile-nav-link" role="menuitem"><span class="nav-text">Skills</span></a></li>
+                    <li role="none"><a href="projects.html" class="mobile-nav-link" role="menuitem"><span class="nav-text">Projects</span></a></li>
+                    <li role="none"><a href="blog.html" class="mobile-nav-link active" role="menuitem"><span class="nav-text">Blog</span></a></li>
+                    <li role="none"><a href="contact.html" class="mobile-nav-link" role="menuitem"><span class="nav-text">Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="blog section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title"><span class="section-number"></span> Blog</h2>
+                    <p class="section-subtitle">Thoughts, learnings & experiences</p>
+                </div>
+
+                <!-- Tabs -->
+                <div class="blog-tabs">
+                    <button class="blog-tab active" data-tab="articles">Articles</button>
+                    <button class="blog-tab" data-tab="thoughts">Thoughts</button>
+                </div>
+
+                <!-- Articles Tab -->
+                <div id="tab-articles" class="tab-content active">
+                    <div class="blog-filters">
+                        <button class="blog-filter-btn active" data-filter="all">All</button>
+                        <button class="blog-filter-btn" data-filter="Web Dev">Web Dev</button>
+                        <button class="blog-filter-btn" data-filter="Machine Learning">Machine Learning</button>
+                        <button class="blog-filter-btn" data-filter="Career">Career</button>
+                        <button class="blog-filter-btn" data-filter="Tutorial">Tutorial</button>
+                    </div>
+                    <div class="blog-grid" id="articles-grid"></div>
+                </div>
+
+                <!-- Thoughts Tab -->
+                <div id="tab-thoughts" class="tab-content">
+                    <div class="thoughts-list" id="thoughts-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2026 Iftekhar Hasan. Built with passion and attention to detail.</p>
+                <div class="footer-links">
+                    <a href="../index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="projects.html" class="footer-link">Projects</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/blog-data.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/blog.js"></script>
+</body>
+</html>
