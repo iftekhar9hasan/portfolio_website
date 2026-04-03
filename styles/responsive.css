@@ -160,6 +160,23 @@
   .hero-title {
     font-size: var(--font-size-xl);
   }
+
+  .footer-content {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  .footer-text {
+    width: 100%;
+    padding: 0 var(--space-sm);
+  }
 }
 
 /* ===== PRINT STYLES ===== */
