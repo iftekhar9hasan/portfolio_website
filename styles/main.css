@@ -612,7 +612,7 @@ body.menu-open .hero-social {
 /* ===== ABOUT SECTION ===== */
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
   align-items: start;
 }
