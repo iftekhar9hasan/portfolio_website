@@ -1,26 +1,26 @@
 // ===== BLOG ARTICLES =====
 const blogArticles = [
-    {
-        id: 1,
-        title: "How I Built a Stock Price Predictor Using LSTM Neural Networks",
-        category: "Machine Learning",
-        date: "October 15, 2025",
-        summary: "A walkthrough of my experience training a two-layer LSTM model on yfinance data, handling overfitting, and deploying it with Flask.",
-        content: `
-            <p>When I started building my stock price predictor, I had no idea how deep the rabbit hole would go. What started as a class project turned into one of the most educational experiences of my CS degree.</p>
-            <h2>The Problem</h2>
-            <p>Predicting stock prices is notoriously difficult. Markets are influenced by everything from earnings reports to tweets. My goal wasn't to build a perfect predictor — it was to understand how LSTM networks handle sequential time-series data.</p>
-            <h2>The Architecture</h2>
-            <p>I used a two-layer LSTM model built with TensorFlow. The input was 60 days of closing prices, and the output was the next day's predicted price. I used a sliding window approach to generate training samples from historical data pulled via the yfinance library.</p>
-            <h2>The Challenges</h2>
-            <p>Overfitting was my biggest enemy. My model would perform great on training data but fall apart on validation. I solved this with dropout layers and early stopping. Getting the data normalization right was also tricky — I used MinMaxScaler and had to be careful to scale test data using the training set's parameters.</p>
-            <h2>Deployment</h2>
-            <p>Deploying with Flask was surprisingly smooth. The model is loaded once at startup and serves predictions via a REST endpoint. The frontend sends a stock ticker symbol, the backend fetches recent data, runs it through the model, and returns a prediction.</p>
-            <h2>What I Learned</h2>
-            <p>The gap between a working Jupyter notebook and a production-ready web app is massive. But bridging that gap taught me more than any course could.</p>
-        `,
-        featured: true
-    },
+    // {
+    //     id: 1,
+    //     title: "How I Built a Stock Price Predictor Using LSTM Neural Networks",
+    //     category: "Machine Learning",
+    //     date: "October 15, 2025",
+    //     summary: "A walkthrough of my experience training a two-layer LSTM model on yfinance data, handling overfitting, and deploying it with Flask.",
+    //     content: `
+    //         <p>When I started building my stock price predictor, I had no idea how deep the rabbit hole would go. What started as a class project turned into one of the most educational experiences of my CS degree.</p>
+    //         <h2>The Problem</h2>
+    //         <p>Predicting stock prices is notoriously difficult. Markets are influenced by everything from earnings reports to tweets. My goal wasn't to build a perfect predictor — it was to understand how LSTM networks handle sequential time-series data.</p>
+    //         <h2>The Architecture</h2>
+    //         <p>I used a two-layer LSTM model built with TensorFlow. The input was 60 days of closing prices, and the output was the next day's predicted price. I used a sliding window approach to generate training samples from historical data pulled via the yfinance library.</p>
+    //         <h2>The Challenges</h2>
+    //         <p>Overfitting was my biggest enemy. My model would perform great on training data but fall apart on validation. I solved this with dropout layers and early stopping. Getting the data normalization right was also tricky — I used MinMaxScaler and had to be careful to scale test data using the training set's parameters.</p>
+    //         <h2>Deployment</h2>
+    //         <p>Deploying with Flask was surprisingly smooth. The model is loaded once at startup and serves predictions via a REST endpoint. The frontend sends a stock ticker symbol, the backend fetches recent data, runs it through the model, and returns a prediction.</p>
+    //         <h2>What I Learned</h2>
+    //         <p>The gap between a working Jupyter notebook and a production-ready web app is massive. But bridging that gap taught me more than any course could.</p>
+    //     `,
+    //     featured: true
+    // },
     // {
     //     id: 2,
     //     title: "Building a Multi-Page Portfolio Without Any Framework",
