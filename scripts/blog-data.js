@@ -110,11 +110,6 @@ const blogThoughts = [
         text: "3.72 GPA. Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CareerAdvice #CSGraduate"
     },
     {
-        id: 2,
-        date: "July 28, 2025",
-        text: "CSS tip: stop fighting position: fixed inside containers. If a parent has transform, filter, or will-change set — fixed positioning breaks. Spent 2 hours debugging this so you don't have to. #WebDev #CSS #TIL"
-    },
-    {
         id: 3,
         date: "May 22, 2025",
         text: "Unpopular opinion: Learning vanilla JS before React actually made me a better React developer. Understanding what the framework is doing for you changes everything. #JavaScript #WebDev"
@@ -123,11 +118,6 @@ const blogThoughts = [
         id: 6,
         date: "May 8, 2025",
         text: "Started learning TypeScript today. Two hours in and I already understand why people love it. Type errors caught at compile time > runtime crashes any day. #TypeScript #JavaScript"
-    },
-    {
-        id: 7,
-        date: "February 28, 2025",
-        text: "Git tip of the day: commit small, commit often. A commit message that says 'fixed stuff' after 3 days of work is a code smell. Future you will be grateful for atomic commits. #Git #Programming"
     },
 
 ];
