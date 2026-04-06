@@ -100,6 +100,11 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
+        id: 1,
+        date: "April 6, 2026",
+        text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand. "
+    },
+    {
         id: 4,
         date: "August 15, 2025",
         text: "3.72 GPA. Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CareerAdvice #CSGraduate"
