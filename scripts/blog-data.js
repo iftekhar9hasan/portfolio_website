@@ -102,7 +102,7 @@ const blogThoughts = [
     {
         id: 8,
         date: "April 6, 2026",
-        text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand. "
+        text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand? "
     },
     {
         id: 4,
