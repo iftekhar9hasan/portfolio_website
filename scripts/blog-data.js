@@ -107,7 +107,7 @@ const blogThoughts = [
     {
         id: 4,
         date: "August 15, 2025",
-        text: "3.72 GPA. Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CareerAdvice #CSGraduate"
+        text: "Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CSGraduate"
     },
     {
         id: 3,
