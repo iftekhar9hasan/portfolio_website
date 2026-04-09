@@ -112,7 +112,7 @@ const blogThoughts = [
     {
         id: 3,
         date: "May 22, 2025",
-        text: "Unpopular opinion: Learning vanilla JS before React actually made me a better React developer. Understanding what the framework is doing for you changes everything. #JavaScript #WebDev"
+        text: "Unpopular opinion: Learning vanilla JS before React actually made me a better React developer. Understanding what the framework is doing for you changes everything. #JavaScript"
     },
     {
         id: 6,
