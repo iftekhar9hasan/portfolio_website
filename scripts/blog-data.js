@@ -100,22 +100,22 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
-        id: 8,
+        id: 4,
         date: "April 6, 2026",
         text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand? "
     },
     {
-        id: 4,
+        id: 3,
         date: "August 15, 2025",
         text: "Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CSGraduate"
     },
     {
-        id: 3,
+        id: 2,
         date: "May 22, 2025",
         text: "Unpopular opinion: Learning vanilla JS before React actually made me a better React developer. Understanding what the framework is doing for you changes everything. #JavaScript"
     },
     {
-        id: 6,
+        id: 1,
         date: "May 8, 2025",
         text: "Started learning TypeScript today. Two hours in and I already understand why people love it. Type errors caught at compile time > runtime crashes any day. #TypeScript #JavaScript"
     },
