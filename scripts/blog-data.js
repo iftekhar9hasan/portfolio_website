@@ -100,6 +100,11 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
+        id: 5,
+        date: "April 10, 2026",
+        text: " Make a decision now"
+    },
+    {
         id: 4,
         date: "April 6, 2026",
         text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand? "
