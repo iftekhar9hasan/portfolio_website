@@ -102,7 +102,7 @@ const blogThoughts = [
     {
         id: 5,
         date: "April 10, 2026",
-        text: " Make a decision now - you are being a player or ball. If you are a player, you will play. And if you are a ball, you will be played."
+        text: "Make a decision now whether you are a player or a ball. If you are a player, you will play. And if you are a ball, you will be played."
     },
     {
         id: 4,
