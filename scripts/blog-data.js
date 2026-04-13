@@ -115,11 +115,6 @@ const blogThoughts = [
         text: "Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CSGraduate"
     },
     {
-        id: 2,
-        date: "May 22, 2025",
-        text: "Unpopular opinion: Learning vanilla JS before React actually made me a better React developer. Understanding what the framework is doing for you changes everything. #JavaScript"
-    },
-    {
         id: 1,
         date: "May 8, 2025",
         text: "Started learning TypeScript today. Two hours in and I already understand why people love it. Type errors caught at compile time > runtime crashes any day. #TypeScript #JavaScript"
