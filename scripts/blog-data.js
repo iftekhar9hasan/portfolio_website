@@ -100,17 +100,17 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
-        id: 5,
+        id: 4,
         date: "April 10, 2026",
         text: "Make a decision now whether you are a player or a ball. If you are a player, you will play. And if you are a ball, you will be played."
     },
     {
-        id: 4,
+        id: 3,
         date: "April 6, 2026",
         text: "Choices danced before me like stars; I reached for one and burned. Tell me, is the flame to blame, or the longing within my hand? "
     },
     {
-        id: 3,
+        id: 2,
         date: "August 15, 2025",
         text: "Graduated last week. Already getting ghosted by companies. Job hunting humbles you fast. Keep building, keep applying. #CSGraduate"
     },
