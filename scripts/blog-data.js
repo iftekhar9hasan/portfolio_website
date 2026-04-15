@@ -100,6 +100,11 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
+        id: 5,
+        date: "April 15, 2026",
+        text: "Opinion is cheap cuz everyone has it."
+    },
+    {
         id: 4,
         date: "April 10, 2026",
         text: "Make a decision now whether you are a player or a ball. If you are a player, you will play. And if you are a ball, you will be played."
