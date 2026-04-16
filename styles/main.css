@@ -459,7 +459,7 @@ body.menu-open .hero-social {
 }
 
 .hero-title {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-2xl);
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
   font-weight: 600;
