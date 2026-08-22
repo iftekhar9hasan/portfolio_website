@@ -100,6 +100,11 @@ const blogArticles = [
 // ===== THOUGHTS (Twitter-style) =====
 const blogThoughts = [
     {
+        id: 6,
+        date: "August 22, 2026",
+        text: "The ship is sinking. Some lifeboats have already sailed away and can be seen on the horizon. Some lifeboats are sailing away, close to the sinking ship. Some people are hopping onto the lifeboats that have just been dropped onto the sea's surface. Some lifeboats are hanging, and some people are deciding who gets to hop onto these. None of the people who have already hopped on and sailed away have any concern for the remaining people. The people who sailed away, or are sailing away, caused the ship to sink and knew when it would sink. Sinking the ship benefits them more, as they have their own way to find a new ship. The remaining people are being asked to pour the water out of the ship and seal the wreck, then find a good sailor who can sail it near the shore. But sealing the wreck and finding the good sailor is like Aladdin's lamp. But there is no such thing, and the ship is bound to become a meal for the blue ocean."
+    },
+    {
         id: 5,
         date: "April 15, 2026",
         text: "Opinion is cheap cuz everyone has it."
