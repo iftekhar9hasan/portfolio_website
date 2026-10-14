@@ -1,683 +1,1258 @@
+
+'use strict';
+
+// ==========================================
 // PROJECT CASE STUDIES
+// ==========================================
 
-    const cases = {
+const cases = {
+  nps: {
+    label: 'CLIENT CAPSTONE / URBAN SCIENCE',
+    title: 'NPS Survey Platform',
+    intro: 'A team-built platform for creating surveys, emailing recipients, and exploring feedback by location.',
+    role: 'Front-end lead and documentation lead. My core contributions included survey creation and sending, email delivery, and the interactive 3D globe.',
+    challenge: 'Make incoming feedback easy to notice and explore without forcing admins to navigate a long static list.',
+    approach: 'Used React and Tailwind CSS for the interface and Mapbox GL JS for the globe. Responses appeared as color-coded markers; clicking a marker exposed its city, score, and response. New responses could bring the globe to the relevant location.',
+    learning: 'Real-time interfaces need careful coordination between incoming data, component readiness, and rendering. Clear documentation also helped the team stay aligned.',
+    links: []
+  },
 
-      nps: {
+  stock: {
+    label: 'INDEPENDENT PROJECT / MACHINE LEARNING',
+    title: 'Stock Price Prediction',
+    intro: 'A full-stack project exploring how sequence models can connect to a usable web interface.',
+    role: 'Built a Python and Flask backend around a two-layer LSTM, alongside an interactive chart interface.',
+    challenge: 'Transform historical prices into correctly shaped training sequences while keeping the prediction workflow understandable.',
+    approach: 'Used a 60-day sliding window, Adam optimization, and mean squared error loss. The frontend accepted a ticker and displayed predictions alongside historical prices.',
+    learning: 'Data preparation and chronological evaluation are central to time-series modeling. This project explores predictions; it does not establish reliable investment performance.',
+    links: [
+      [
+        'Source code',
+        'https://github.com/iftekhar9hasan/stock-price-prediction'
+      ]
+    ]
+  },
 
-        label: 'CLIENT CAPSTONE / URBAN SCIENCE',
+  timer: {
+    label: 'INDEPENDENT PROJECT / WEB APPLICATION',
+    title: 'Pomodoro Enhancer',
+    intro: 'A browser-based focus timer with customizable settings and background music.',
+    role: 'Built the interface and timer experience using HTML, CSS, and JavaScript.',
+    challenge: 'Keep a productivity tool simple enough to use without distracting from the task at hand.',
+    approach: 'Organized the experience around the timer, with settings and music supporting the focus session.',
+    learning: 'Small applications are a useful place to practice clear state transitions and intuitive controls.',
+    links: [
+      [
+        'Live project',
+        'https://promodoro-enhancer.netlify.app/'
+      ],
+      [
+        'Source code',
+        'https://github.com/iftekhar9hasan/Pomodoro-Times'
+      ]
+    ]
+  }
+};
 
-        title: 'NPS Survey Platform',
+// ==========================================
+// PROJECT FILTERS
+// ==========================================
 
-        intro: 'A team-built platform for creating surveys, emailing recipients, and exploring feedback by location.',
+document.querySelectorAll('.filter[data-filter]').forEach(button => {
+  button.onclick = () => {
+    document.querySelectorAll('.filter[data-filter]').forEach(item => {
+      const active = item === button;
 
-        role: 'Front-end lead and documentation lead. My core contributions included survey creation and sending, email delivery, and the interactive 3D globe.',
-
-        challenge: 'Make incoming feedback easy to notice and explore without forcing admins to navigate a long static list.',
-
-        approach: 'Used React and Tailwind CSS for the interface and Mapbox GL JS for the globe. Responses appeared as color-coded markers; clicking a marker exposed its city, score, and response. New responses could bring the globe to the relevant location.',
-
-        learning: 'Real-time interfaces need careful coordination between incoming data, component readiness, and rendering. Clear documentation also helped the team stay aligned.',
-
-        links: []
-
-      },
-
-      stock: {
-
-        label: 'INDEPENDENT PROJECT / MACHINE LEARNING',
-
-        title: 'Stock Price Prediction',
-
-        intro: 'A full-stack project exploring how sequence models can connect to a usable web interface.',
-
-        role: 'Built a Python and Flask backend around a two-layer LSTM, alongside an interactive chart interface.',
-
-        challenge: 'Transform historical prices into correctly shaped training sequences while keeping the prediction workflow understandable.',
-
-        approach: 'Used a 60-day sliding window, Adam optimization, and mean squared error loss. The frontend accepted a ticker and displayed predictions alongside historical prices.',
-
-        learning: 'Data preparation and chronological evaluation are central to time-series modeling. This project explores predictions; it does not establish reliable investment performance.',
-
-        links: [
-
-          [
-
-            'Source code',
-
-            'https://github.com/iftekhar9hasan/stock-price-prediction'
-
-          ]
-
-        ]
-
-      },
-
-      timer: {
-
-        label: 'INDEPENDENT PROJECT / WEB APPLICATION',
-
-        title: 'Pomodoro Enhancer',
-
-        intro: 'A browser-based focus timer with customizable settings and background music.',
-
-        role: 'Built the interface and timer experience using HTML, CSS, and JavaScript.',
-
-        challenge: 'Keep a productivity tool simple enough to use without distracting from the task at hand.',
-
-        approach: 'Organized the experience around the timer, with settings and music supporting the focus session.',
-
-        learning: 'Small applications are a useful place to practice clear state transitions and intuitive controls.',
-
-        links: [
-
-          [
-
-            'Live project',
-
-            'https://promodoro-enhancer.netlify.app/'
-
-          ],
-
-          [
-
-            'Source code',
-
-            'https://github.com/iftekhar9hasan/Pomodoro-Times'
-
-          ]
-
-        ]
-
-      }
-
-    };
-
-    // PROJECT FILTERS
-
-    document.querySelectorAll('.filter[data-filter]').forEach(button => {
-
-      button.onclick = () => {
-
-        document.querySelectorAll('.filter[data-filter]').forEach(item => {
-
-          item.classList.toggle('active', item === button);
-
-          item.setAttribute('aria-pressed', item === button);
-
-        });
-
-        document.querySelectorAll('.project').forEach(project => {
-
-          const hide =
-
-            button.dataset.filter !== 'all' &&
-
-            project.dataset.category !== button.dataset.filter;
-
-          project.classList.toggle('hidden', hide);
-
-        });
-
-      };
-
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
     });
 
-    // DIALOGS
+    document.querySelectorAll('.project').forEach(project => {
+      const hide =
+        button.dataset.filter !== 'all' &&
+        project.dataset.category !== button.dataset.filter;
 
-    const dialog = document.getElementById('case-dialog');
+      project.classList.toggle('hidden', hide);
+    });
+  };
+});
 
-    document.querySelectorAll('[data-case]').forEach(button => {
+// ==========================================
+// CASE STUDY DIALOG
+// ==========================================
 
-      button.onclick = () => {
+const dialog = document.getElementById('case-dialog');
+const caseContent = document.getElementById('case-content');
 
-        const project = cases[button.dataset.case];
+document.querySelectorAll('[data-case]').forEach(button => {
+  button.onclick = () => {
+    const project = cases[button.dataset.case];
 
-        document.getElementById('case-content').innerHTML =
+    if (!project || !dialog || !caseContent) return;
 
-          '<div class="eyebrow">' + project.label + '</div>' +
+    caseContent.innerHTML =
+      '<div class="eyebrow">' + project.label + '</div>' +
+      '<h2>' + project.title + '</h2>' +
+      '<p>' + project.intro + '</p>' +
+      [
+        ['My contribution', project.role],
+        ['The challenge', project.challenge],
+        ['The approach', project.approach],
+        ['What I learned', project.learning]
+      ].map(([heading, text]) =>
+        '<h3>' + heading + '</h3><p>' + text + '</p>'
+      ).join('') +
+      '<div class="actions">' +
+      project.links.map(([text, url]) =>
+        '<a class="btn" target="_blank" rel="noopener" href="' +
+        url + '">' + text + ' ↗</a>'
+      ).join('') +
+      '</div>';
 
-          '<h2>' + project.title + '</h2>' +
+    dialog.showModal();
+  };
+});
 
-          '<p>' + project.intro + '</p>' +
+if (dialog) {
+  const closeButton = dialog.querySelector('.close');
 
-          [
+  if (closeButton) {
+    closeButton.onclick = () => dialog.close();
+  }
 
-            ['My contribution', project.role],
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
 
-            ['The challenge', project.challenge],
+    const bounds = dialog.getBoundingClientRect();
 
-            ['The approach', project.approach],
+    if (
+      event.clientX < bounds.left ||
+      event.clientX > bounds.right ||
+      event.clientY < bounds.top ||
+      event.clientY > bounds.bottom
+    ) {
+      dialog.close();
+    }
+  });
+}
 
-            ['What I learned', project.learning]
+// ==========================================
+// LIGHT / DARK THEME
+// ==========================================
 
-          ].map(([heading, text]) =>
+const savedTheme = localStorage.getItem('portfolio-theme');
 
-            '<h3>' + heading + '</h3><p>' + text + '</p>'
+if (savedTheme === 'dark') {
+  document.body.classList.add('dark');
+}
 
-          ).join('') +
+const themeButton = document.querySelector('.theme');
 
-          '<div class="actions">' +
+if (themeButton) {
+  themeButton.onclick = () => {
+    document.body.classList.toggle('dark');
 
-          project.links.map(([text, url]) =>
+    localStorage.setItem(
+      'portfolio-theme',
+      document.body.classList.contains('dark') ? 'dark' : 'light'
+    );
+  };
+}
 
-            '<a class="btn" target="_blank" rel="noopener" href="' +
+// ==========================================
+// COPYRIGHT YEAR
+// ==========================================
 
-            url + '">' + text + ' ↗</a>'
+const yearElement = document.getElementById('year');
 
-          ).join('') +
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
-          '</div>';
+// ==========================================
+// INTERACTIVE AI NETWORK
+// ==========================================
 
-        dialog.showModal();
+(() => {
+  const canvas = document.getElementById('ai-network');
+  const stage = document.getElementById('network-stage');
+  const pauseButton = document.getElementById('rotate');
 
-      };
+  if (!canvas || !stage || !pauseButton) return;
 
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const tooltip = document.getElementById('network-tooltip');
+  const tooltipType = document.getElementById('network-tooltip-type');
+  const tooltipTitle = document.getElementById('network-tooltip-title');
+  const tooltipDescription = document.getElementById(
+    'network-tooltip-description'
+  );
+
+  const networkTitle = document.getElementById('network-title');
+  const networkDescription = document.getElementById(
+    'network-description'
+  );
+
+  const defaultTitle = networkTitle
+    ? networkTitle.textContent
+    : '';
+
+  const defaultDescription = networkDescription
+    ? networkDescription.textContent
+    : '';
+
+  const motionPreference = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  );
+
+  let paused = motionPreference.matches;
+  let visible = true;
+  let width = 0;
+  let height = 0;
+  let animationId = null;
+  let lastTime = 0;
+  let elapsed = 0;
+  let hoveredNode = null;
+  let selectedNode = null;
+
+  const pointer = {
+    x: -1000,
+    y: -1000,
+    active: false
+  };
+
+  // Real skills and projects represented by
+  // the eight highlighted network nodes.
+
+  const featuredNodes = [
+    {
+      x: 0.18,
+      y: 0.22,
+      label: 'React',
+      type: 'Frontend',
+      description: 'Building interactive web interfaces.',
+      color: '#d1f36b',
+      radius: 5.5
+    },
+    {
+      x: 0.77,
+      y: 0.19,
+      label: 'Python',
+      type: 'Programming',
+      description: 'Software development, automation, and machine learning.',
+      color: '#b9e994',
+      radius: 6
+    },
+    {
+      x: 0.86,
+      y: 0.49,
+      label: 'AI Evaluation',
+      type: 'AI Quality',
+      description: 'Model evaluation, structured rubrics, and Python tests.',
+      color: '#e6ff9c',
+      radius: 7
+    },
+    {
+      x: 0.75,
+      y: 0.80,
+      label: 'Stock Prediction',
+      type: 'Machine Learning',
+      description: 'A Flask application powered by a two-layer LSTM.',
+      color: '#b5d9ff',
+      radius: 6
+    },
+    {
+      x: 0.23,
+      y: 0.79,
+      label: 'Urban Science',
+      type: 'Featured Project',
+      description: 'Survey platform with an interactive 3D globe.',
+      color: '#d1f36b',
+      radius: 7
+    },
+    {
+      x: 0.12,
+      y: 0.49,
+      label: 'JavaScript',
+      type: 'Programming',
+      description: 'Building responsive and interactive web applications.',
+      color: '#b9e994',
+      radius: 5.5
+    },
+    {
+      x: 0.47,
+      y: 0.12,
+      label: 'Firebase',
+      type: 'Applications',
+      description: 'Authentication and real-time synchronization.',
+      color: '#d1f36b',
+      radius: 5
+    },
+    {
+      x: 0.52,
+      y: 0.88,
+      label: 'Testing',
+      type: 'Quality Engineering',
+      description: 'Automated tests and reliable software behavior.',
+      color: '#e6ff9c',
+      radius: 5.5
+    }
+  ];
+
+  const nodes = [];
+
+  // Seeded randomness produces the same
+  // network layout after each refresh.
+
+  let seed = 247;
+
+  function random() {
+    seed = (seed * 16807) % 2147483647;
+    return (seed - 1) / 2147483646;
+  }
+
+  function createNodes() {
+    nodes.length = 0;
+
+    featuredNodes.forEach((node, index) => {
+      nodes.push({
+        ...node,
+        id: index,
+        featured: true,
+        phase: random() * Math.PI * 2,
+        speed: 0.6 + random() * 0.7,
+        offset: 2 + random() * 4,
+        px: 0,
+        py: 0
+      });
     });
 
-    document.querySelector('.close').onclick = () => dialog.close();
+    // Decorative nodes connect the network.
 
-    dialog.addEventListener('click', event => {
+    for (let i = 0; i < 30; i++) {
+      nodes.push({
+        id: featuredNodes.length + i,
+        x: 0.06 + random() * 0.88,
+        y: 0.08 + random() * 0.84,
+        featured: false,
+        radius: 1.4 + random() * 1.7,
+        phase: random() * Math.PI * 2,
+        speed: 0.4 + random() * 0.9,
+        offset: 3 + random() * 6,
+        color: '#8fb89b',
+        px: 0,
+        py: 0
+      });
+    }
+  }
 
-      if (event.target === dialog) {
+  createNodes();
 
-        const bounds = dialog.getBoundingClientRect();
+  function resizeCanvas() {
+    const rect = canvas.getBoundingClientRect();
 
-        if (
+    width = rect.width;
+    height = rect.height;
 
-          event.clientX < bounds.left ||
+    if (!width || !height) return;
 
-          event.clientX > bounds.right ||
+    const ratio = Math.min(
+      window.devicePixelRatio || 1,
+      2
+    );
 
-          event.clientY < bounds.top ||
+    canvas.width = Math.round(width * ratio);
+    canvas.height = Math.round(height * ratio);
 
-          event.clientY > bounds.bottom
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
 
-        ) {
+    updatePositions();
+    draw();
+  }
 
-          dialog.close();
+  function updatePositions() {
+    const mobile = width < 360;
 
-        }
+    nodes.forEach(node => {
+      const scale = mobile ? 0.6 : 1;
 
-      }
+      const dx = paused
+        ? 0
+        : Math.sin(
+            elapsed * node.speed + node.phase
+          ) * node.offset * scale;
 
+      const dy = paused
+        ? 0
+        : Math.cos(
+            elapsed * node.speed * 0.8 + node.phase
+          ) * node.offset * scale;
+
+      node.px = node.x * width + dx;
+      node.py = node.y * height + dy;
     });
+  }
 
-    // THEME
+  function distance(a, b) {
+    return Math.hypot(
+      a.px - b.px,
+      a.py - b.py
+    );
+  }
 
-    let theme = localStorage.getItem('portfolio-theme');
+  function drawBackground() {
+    const gradient = ctx.createRadialGradient(
+      width / 2,
+      height / 2,
+      10,
+      width / 2,
+      height / 2,
+      width * 0.65
+    );
 
-    if (theme === 'dark') {
+    gradient.addColorStop(
+      0,
+      'rgba(110, 156, 90, 0.11)'
+    );
 
-      document.body.classList.add('dark');
+    gradient.addColorStop(
+      1,
+      'rgba(25, 54, 45, 0)'
+    );
 
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, width, height);
+
+    // Subtle background grid.
+
+    ctx.strokeStyle = 'rgba(170, 205, 160, 0.035)';
+    ctx.lineWidth = 1;
+
+    const gridSize = 28;
+
+    for (let x = 0; x < width; x += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
     }
 
-    document.querySelector('.theme').onclick = () => {
+    for (let y = 0; y < height; y += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+    }
+  }
 
-      document.body.classList.toggle('dark');
+  function drawConnections() {
+    const maxDistance = Math.min(
+      width * 0.31,
+      135
+    );
 
-      localStorage.setItem(
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i];
+        const b = nodes[j];
 
-        'portfolio-theme',
+        const d = distance(a, b);
 
-        document.body.classList.contains('dark') ? 'dark' : 'light'
+        if (d > maxDistance) continue;
 
+        const proximity = 1 - d / maxDistance;
+
+        const highlighted =
+          a === hoveredNode ||
+          b === hoveredNode ||
+          a === selectedNode ||
+          b === selectedNode;
+
+        const alpha = highlighted
+          ? 0.18 + proximity * 0.55
+          : 0.045 + proximity * 0.17;
+
+        ctx.beginPath();
+        ctx.moveTo(a.px, a.py);
+        ctx.lineTo(b.px, b.py);
+
+        ctx.strokeStyle = highlighted
+          ? `rgba(209, 243, 107, ${alpha})`
+          : `rgba(157, 205, 159, ${alpha})`;
+
+        ctx.lineWidth = highlighted ? 1.35 : 0.7;
+        ctx.stroke();
+      }
+    }
+  }
+
+  function drawCenterConnections() {
+    const cx = width / 2;
+    const cy = height / 2;
+
+    featuredNodes.forEach((_, index) => {
+      const node = nodes[index];
+
+      const alpha =
+        node === hoveredNode ||
+        node === selectedNode
+          ? 0.4
+          : 0.09;
+
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(node.px, node.py);
+
+      ctx.strokeStyle =
+        `rgba(209, 243, 107, ${alpha})`;
+
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+  }
+
+  function drawPointerConnections() {
+    if (!pointer.active) return;
+
+    nodes.forEach(node => {
+      const d = Math.hypot(
+        node.px - pointer.x,
+        node.py - pointer.y
       );
 
-    };
+      if (d > 85) return;
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+      const alpha = (1 - d / 85) * 0.45;
 
-    // ANIMATED GLOBE
+      ctx.beginPath();
+      ctx.moveTo(pointer.x, pointer.y);
+      ctx.lineTo(node.px, node.py);
 
-    const canvas = document.getElementById('globe');
+      ctx.strokeStyle =
+        `rgba(209, 243, 107, ${alpha})`;
 
-    const ctx = canvas.getContext('2d');
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+  }
 
-    let angle = 0;
+  function drawNode(node) {
+    const active =
+      node === hoveredNode ||
+      node === selectedNode;
 
-    let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const radius = node.radius + (active ? 2.5 : 0);
 
-    let cityIndex = 0;
-
-    const cities = [
-
-      'Detroit — where the capstone began',
-
-      'London — illustrative response marker',
-
-      'Tokyo — illustrative response marker',
-
-      'Sydney — illustrative response marker'
-
-    ];
-
-    const pauseButton = document.getElementById('rotate');
-
-    function updatePause() {
-
-      pauseButton.textContent = paused ? 'Rotate ↔' : 'Pause ↔';
-
-    }
-
-    updatePause();
-
-    pauseButton.onclick = () => {
-
-      paused = !paused;
-
-      updatePause();
-
-    };
-
-    canvas.onclick = () => {
-
-      cityIndex = (cityIndex + 1) % cities.length;
-
-      document.getElementById('city').textContent = cities[cityIndex];
-
-      angle += .7;
-
-    };
-
-    function frame() {
-
-      const width = canvas.clientWidth;
-
-      const height = canvas.clientHeight;
-
-      const ratio = Math.min(devicePixelRatio || 1, 2);
-
-      if (
-
-        canvas.width !== width * ratio ||
-
-        canvas.height !== height * ratio
-
-      ) {
-
-        canvas.width = width * ratio;
-
-        canvas.height = height * ratio;
-
-      }
-
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-      ctx.clearRect(0, 0, width, height);
-
-      const radius = Math.min(width * .34, height * .44);
-
-      const centerX = width / 2;
-
-      const centerY = height / 2;
+    if (node.featured) {
+      const glowRadius = active ? 27 : 17;
 
       const glow = ctx.createRadialGradient(
-
-        centerX - radius * .3,
-
-        centerY - radius * .3,
-
-        10,
-
-        centerX,
-
-        centerY,
-
-        radius
-
+        node.px,
+        node.py,
+        0,
+        node.px,
+        node.py,
+        glowRadius
       );
 
-      glow.addColorStop(0, '#405b39');
+      glow.addColorStop(
+        0,
+        active
+          ? 'rgba(209, 243, 107, 0.28)'
+          : 'rgba(209, 243, 107, 0.13)'
+      );
 
-      glow.addColorStop(1, '#142f28');
+      glow.addColorStop(
+        1,
+        'rgba(209, 243, 107, 0)'
+      );
 
       ctx.fillStyle = glow;
 
       ctx.beginPath();
-
-      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-
+      ctx.arc(
+        node.px,
+        node.py,
+        glowRadius,
+        0,
+        Math.PI * 2
+      );
       ctx.fill();
 
-      ctx.strokeStyle = '#88a66b80';
-
-      ctx.lineWidth = 1;
-
-      ctx.stroke();
-
-      // Latitude rings
-
-      for (let latitude = -60; latitude <= 60; latitude += 30) {
-
-        const y =
-
-          centerY + radius * Math.sin(latitude * Math.PI / 180);
-
-        const ringRadius =
-
-          radius * Math.cos(latitude * Math.PI / 180);
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-
-          centerX,
-
-          y,
-
-          ringRadius,
-
-          ringRadius * .17,
-
-          0,
-
-          0,
-
-          Math.PI * 2
-
-        );
-
-        ctx.stroke();
-
-      }
-
-      // Rotating longitude rings
-
-      for (let longitude = 0; longitude < 8; longitude++) {
-
-        const rotation = angle + longitude * Math.PI / 8;
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-
-          centerX,
-
-          centerY,
-
-          Math.max(.1, Math.abs(Math.cos(rotation)) * radius),
-
-          radius,
-
-          0,
-
-          0,
-
-          Math.PI * 2
-
-        );
-
-        ctx.stroke();
-
-      }
-
-      // Sample markers
-
-      const points = [
-
-        [.45, -.4],
-
-        [1.8, .1],
-
-        [3.2, -.1],
-
-        [4.8, .6],
-
-        [5.5, -.5]
-
-      ];
-
-      points.forEach(([longitude, latitude], index) => {
-
-        const rotation = longitude + angle;
-
-        const depth = Math.cos(rotation) * Math.cos(latitude);
-
-        if (depth < 0) return;
-
-        const x =
-
-          centerX + radius * Math.sin(rotation) * Math.cos(latitude);
-
-        const y = centerY + radius * Math.sin(latitude);
-
-        ctx.fillStyle = index === cityIndex ? '#efffb5' : '#d1f36b';
-
-        ctx.beginPath();
-
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
-
-        ctx.fill();
-
-        ctx.strokeStyle = '#d1f36b40';
-
-        ctx.beginPath();
-
-        ctx.arc(x, y, 9, 0, Math.PI * 2);
-
-        ctx.stroke();
-
-      });
-
-      if (!paused) angle += .002;
-
-      requestAnimationFrame(frame);
-
-    }
-
-    frame();
-
-    // BLOG AND THOUGHTS
-
-    const writingData = {
-
-      articles: window.blogArticles,
-
-      thoughts: window.blogThoughts
-
-    };
-
-    let writingMode = 'articles';
-
-    const escapeText = value =>
-
-      String(value).replace(/[&<>"']/g, character => ({
-
-        '&': '&amp;',
-
-        '<': '&lt;',
-
-        '>': '&gt;',
-
-        '"': '&quot;',
-
-        "'": '&#39;'
-
-      }[character]));
-
-    function renderWriting() {
-
-      const query = document.getElementById('writing-search')
-
-        .value.toLowerCase().trim();
-
-      const items = writingData[writingMode].filter(item =>
-
-        [
-
-          item.title,
-
-          item.summary,
-
-          item.text,
-
-          item.category,
-
-          item.content
-
-        ]
-
-          .filter(Boolean)
-
-          .join(' ')
-
-          .toLowerCase()
-
-          .includes(query)
-
+      // Outer ring.
+
+      ctx.beginPath();
+      ctx.arc(
+        node.px,
+        node.py,
+        radius + 5,
+        0,
+        Math.PI * 2
       );
 
-      document.getElementById('articles-panel').hidden =
+      ctx.strokeStyle = active
+        ? 'rgba(209, 243, 107, 0.7)'
+        : 'rgba(209, 243, 107, 0.25)';
 
-        writingMode !== 'articles';
-
-      document.getElementById('thoughts-panel').hidden =
-
-        writingMode !== 'thoughts';
-
-      document.getElementById('writing-empty').hidden = items.length > 0;
-
-      const panel = document.getElementById(writingMode + '-panel');
-
-      panel.innerHTML = items.map(item =>
-
-        writingMode === 'articles'
-
-          ? '<article class="article-entry">' +
-
-            '<div class="article-meta">' +
-
-            escapeText(item.category) + ' / ' + escapeText(item.date) +
-
-            '</div><h3>' + escapeText(item.title) + '</h3>' +
-
-            '<p>' + escapeText(item.summary) + '</p>' +
-
-            '<button class="case" data-article="' + item.id + '">' +
-
-            'Read the story ↗</button></article>'
-
-          : '<article class="thought-entry">' +
-
-            '<div class="avatar" aria-hidden="true">ih.</div>' +
-
-            '<div><div class="thought-name">Iftekhar Hasan' +
-
-            '<span class="thought-date">' +
-
-            escapeText(item.date) +
-
-            '</span></div><p>' +
-
-            escapeText(item.text) +
-
-            '</p></div></article>'
-
-      ).join('');
-
-      panel.querySelectorAll('[data-article]').forEach(button => {
-
-        button.onclick = () => {
-
-          const article = writingData.articles.find(item =>
-
-            String(item.id) === button.dataset.article
-
-          );
-
-          document.getElementById('case-content').innerHTML =
-
-            '<div class="eyebrow">' +
-
-            escapeText(article.category) + ' / ' +
-
-            escapeText(article.date) +
-
-            '</div><h2>' +
-
-            escapeText(article.title) +
-
-            '</h2><div class="article-body">' +
-
-            article.content +
-
-            '</div>';
-
-          dialog.showModal();
-
-        };
-
-      });
-
+      ctx.lineWidth = 1;
+      ctx.stroke();
     }
 
-    const writingTabs = [
+    // Main node.
 
-      ...document.querySelectorAll('[data-writing]')
+    ctx.beginPath();
+    ctx.arc(
+      node.px,
+      node.py,
+      radius,
+      0,
+      Math.PI * 2
+    );
 
-    ];
+    ctx.fillStyle = node.color;
+    ctx.fill();
 
-    writingTabs.forEach(button => {
+    if (node.featured) {
+      ctx.beginPath();
+      ctx.arc(
+        node.px,
+        node.py,
+        Math.max(1.5, radius * 0.35),
+        0,
+        Math.PI * 2
+      );
 
-      button.onclick = () => {
+      ctx.fillStyle = '#19362d';
+      ctx.fill();
+    }
 
-        writingMode = button.dataset.writing;
+    // Show labels when hovering or selecting.
 
-        writingTabs.forEach(item => {
+    if (active && node.featured) {
+      ctx.font = '600 11px "DM Sans", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
 
-          item.classList.toggle('active', item === button);
+      const labelWidth =
+        ctx.measureText(node.label).width;
 
-          item.setAttribute(
+      const labelX = Math.max(
+        labelWidth / 2 + 10,
+        Math.min(
+          width - labelWidth / 2 - 10,
+          node.px
+        )
+      );
 
-            'aria-selected',
+      const labelY = node.py > 35
+        ? node.py - 23
+        : node.py + 24;
 
-            String(item === button)
+      ctx.fillStyle = '#f1f6e8';
+      ctx.fillText(
+        node.label,
+        labelX,
+        labelY
+      );
+    }
+  }
 
-          );
+  function draw() {
+    if (!width || !height) return;
 
-          item.tabIndex = item === button ? 0 : -1;
+    ctx.clearRect(
+      0,
+      0,
+      width,
+      height
+    );
 
-        });
+    drawBackground();
+    drawConnections();
+    drawCenterConnections();
+    drawPointerConnections();
 
-        renderWriting();
+    nodes.forEach(drawNode);
+  }
 
-      };
+  // ========================================
+  // NODE INTERACTION
+  // ========================================
 
-      button.onkeydown = event => {
+  function findNode(x, y) {
+    let closest = null;
+    let minDistance = 23;
 
-        if (
+    nodes.forEach(node => {
+      if (!node.featured) return;
 
-          ['ArrowLeft', 'ArrowRight', 'Home', 'End']
+      const d = Math.hypot(
+        node.px - x,
+        node.py - y
+      );
 
-            .includes(event.key)
-
-        ) {
-
-          event.preventDefault();
-
-          const next =
-
-            event.key === 'Home'
-
-              ? writingTabs[0]
-
-              : event.key === 'End'
-
-                ? writingTabs[1]
-
-                : writingTabs[1 - writingTabs.indexOf(button)];
-
-          next.click();
-
-          next.focus();
-
-        }
-
-      };
-
+      if (d < minDistance) {
+        closest = node;
+        minDistance = d;
+      }
     });
 
-    document.getElementById('writing-search').oninput = renderWriting;
+    return closest;
+  }
+
+  function positionTooltip(node) {
+    if (!node || !tooltip) return;
+
+    const tooltipWidth =
+      tooltip.offsetWidth || 205;
+
+    const tooltipHeight =
+      tooltip.offsetHeight || 95;
+
+    const left = Math.max(
+      4,
+      Math.min(
+        width - tooltipWidth - 4,
+        node.px + 15
+      )
+    );
+
+    const top = Math.max(
+      4,
+      Math.min(
+        height - tooltipHeight - 4,
+        node.py - tooltipHeight - 10
+      )
+    );
+
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  }
+
+  function showTooltip(node) {
+    if (
+      !tooltip ||
+      !tooltipType ||
+      !tooltipTitle ||
+      !tooltipDescription
+    ) {
+      return;
+    }
+
+    if (!node) {
+      tooltip.hidden = true;
+      return;
+    }
+
+    tooltipType.textContent = node.type;
+    tooltipTitle.textContent = node.label;
+    tooltipDescription.textContent =
+      node.description;
+
+    tooltip.hidden = false;
+
+    positionTooltip(node);
+  }
+
+  function selectNode(node) {
+    selectedNode = node;
+
+    if (node) {
+      if (networkTitle) {
+        networkTitle.textContent = node.label;
+      }
+
+      if (networkDescription) {
+        networkDescription.textContent =
+          node.description;
+      }
+
+      showTooltip(node);
+    } else {
+      if (networkTitle) {
+        networkTitle.textContent = defaultTitle;
+      }
+
+      if (networkDescription) {
+        networkDescription.textContent =
+          defaultDescription;
+      }
+
+      showTooltip(null);
+    }
+
+    draw();
+  }
+
+  function getPointerPosition(event) {
+    const rect = canvas.getBoundingClientRect();
+
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top
+    };
+  }
+
+  canvas.addEventListener(
+    'pointermove',
+    event => {
+      if (event.pointerType === 'touch') return;
+
+      const position = getPointerPosition(event);
+
+      pointer.x = position.x;
+      pointer.y = position.y;
+      pointer.active = true;
+
+      hoveredNode = findNode(
+        position.x,
+        position.y
+      );
+
+      canvas.style.cursor = hoveredNode
+        ? 'pointer'
+        : 'crosshair';
+
+      showTooltip(
+        hoveredNode || selectedNode
+      );
+
+      if (paused) draw();
+    }
+  );
+
+  canvas.addEventListener(
+    'pointerleave',
+    () => {
+      pointer.active = false;
+      hoveredNode = null;
+
+      showTooltip(selectedNode);
+
+      if (paused) draw();
+    }
+  );
+
+  canvas.addEventListener(
+    'click',
+    event => {
+      const position = getPointerPosition(event);
+
+      const clickedNode = findNode(
+        position.x,
+        position.y
+      );
+
+      if (clickedNode === selectedNode) {
+        selectNode(null);
+      } else {
+        selectNode(clickedNode);
+      }
+    }
+  );
+
+  // ========================================
+  // PAUSE / PLAY
+  // ========================================
+
+  function updatePauseButton() {
+    pauseButton.textContent = paused
+      ? 'Play ↔'
+      : 'Pause ↔';
+
+    pauseButton.setAttribute(
+      'aria-pressed',
+      String(paused)
+    );
+  }
+
+  pauseButton.addEventListener(
+    'click',
+    () => {
+      paused = !paused;
+
+      updatePauseButton();
+
+      if (paused) {
+        stopAnimation();
+        draw();
+      } else {
+        lastTime = 0;
+        startAnimation();
+      }
+    }
+  );
+
+  // ========================================
+  // ANIMATION LOOP
+  // ========================================
+
+  function animate(timestamp) {
+    animationId = null;
+
+    if (
+      paused ||
+      !visible ||
+      document.hidden
+    ) {
+      return;
+    }
+
+    if (!lastTime) {
+      lastTime = timestamp;
+    }
+
+    const delta = Math.min(
+      (timestamp - lastTime) / 1000,
+      0.05
+    );
+
+    lastTime = timestamp;
+    elapsed += delta * 0.65;
+
+    updatePositions();
+
+    if (hoveredNode) {
+      positionTooltip(hoveredNode);
+    } else if (selectedNode) {
+      positionTooltip(selectedNode);
+    }
+
+    draw();
+
+    animationId =
+      requestAnimationFrame(animate);
+  }
+
+  function startAnimation() {
+    if (
+      animationId !== null ||
+      paused ||
+      !visible ||
+      document.hidden
+    ) {
+      return;
+    }
+
+    animationId =
+      requestAnimationFrame(animate);
+  }
+
+  function stopAnimation() {
+    if (animationId !== null) {
+      cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+
+    lastTime = 0;
+  }
+
+  // Pause drawing when the network
+  // leaves the viewport.
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        visible = entries[0].isIntersecting;
+
+        if (visible) {
+          startAnimation();
+        } else {
+          stopAnimation();
+        }
+      },
+      {
+        threshold: 0.05
+      }
+    );
+
+    observer.observe(stage);
+  }
+
+  // Respect reduced-motion settings.
+
+  if (motionPreference.addEventListener) {
+    motionPreference.addEventListener(
+      'change',
+      event => {
+        paused = event.matches;
+
+        updatePauseButton();
+
+        if (paused) {
+          stopAnimation();
+          updatePositions();
+          draw();
+        } else {
+          startAnimation();
+        }
+      }
+    );
+  }
+
+  // Stop drawing in background tabs.
+
+  document.addEventListener(
+    'visibilitychange',
+    () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else {
+        startAnimation();
+      }
+    }
+  );
+
+  // Resize the canvas with its container.
+
+  if ('ResizeObserver' in window) {
+    const resizeObserver = new ResizeObserver(
+      () => resizeCanvas()
+    );
+
+    resizeObserver.observe(stage);
+  } else {
+    window.addEventListener(
+      'resize',
+      resizeCanvas
+    );
+  }
+
+  resizeCanvas();
+  updatePauseButton();
+  startAnimation();
+})();
+
+// ==========================================
+// BLOG POSTS AND THOUGHTS
+// ==========================================
+
+const writingData = {
+  articles: window.blogArticles || [],
+  thoughts: window.blogThoughts || []
+};
+
+let writingMode = 'articles';
+
+// Escape user-authored plain text before
+// inserting it into HTML.
+
+const escapeText = value =>
+  String(value ?? '').replace(
+    /[&<>"']/g,
+    character => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[character])
+  );
+
+function renderWriting() {
+  const searchInput =
+    document.getElementById('writing-search');
+
+  if (!searchInput) return;
+
+  const query = searchInput.value
+    .toLowerCase()
+    .trim();
+
+  const items = writingData[writingMode].filter(
+    item =>
+      [
+        item.title,
+        item.summary,
+        item.text,
+        item.category,
+        item.content
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+        .includes(query)
+  );
+
+  const articlesPanel =
+    document.getElementById('articles-panel');
+
+  const thoughtsPanel =
+    document.getElementById('thoughts-panel');
+
+  const emptyMessage =
+    document.getElementById('writing-empty');
+
+  if (!articlesPanel || !thoughtsPanel) return;
+
+  articlesPanel.hidden =
+    writingMode !== 'articles';
+
+  thoughtsPanel.hidden =
+    writingMode !== 'thoughts';
+
+  if (emptyMessage) {
+    emptyMessage.hidden = items.length > 0;
+  }
+
+  const panel = document.getElementById(
+    writingMode + '-panel'
+  );
+
+  panel.innerHTML = items.map(item =>
+    writingMode === 'articles'
+      ? '<article class="article-entry">' +
+        '<div class="article-meta">' +
+        escapeText(item.category) +
+        ' / ' +
+        escapeText(item.date) +
+        '</div>' +
+        '<h3>' +
+        escapeText(item.title) +
+        '</h3>' +
+        '<p>' +
+        escapeText(item.summary) +
+        '</p>' +
+        '<button class="case" data-article="' +
+        escapeText(item.id) +
+        '">' +
+        'Read the story ↗' +
+        '</button>' +
+        '</article>'
+      : '<article class="thought-entry">' +
+        '<div class="avatar" aria-hidden="true">' +
+        'ih.' +
+        '</div>' +
+        '<div>' +
+        '<div class="thought-name">' +
+        'Iftekhar Hasan' +
+        '<span class="thought-date">' +
+        escapeText(item.date) +
+        '</span>' +
+        '</div>' +
+        '<p>' +
+        escapeText(item.text) +
+        '</p>' +
+        '</div>' +
+        '</article>'
+  ).join('');
+
+  // Article dialog events.
+
+  panel.querySelectorAll(
+    '[data-article]'
+  ).forEach(button => {
+    button.onclick = () => {
+      const article = writingData.articles.find(
+        item =>
+          String(item.id) ===
+          button.dataset.article
+      );
+
+      if (!article || !dialog || !caseContent) {
+        return;
+      }
+
+      caseContent.innerHTML =
+        '<div class="eyebrow">' +
+        escapeText(article.category) +
+        ' / ' +
+        escapeText(article.date) +
+        '</div>' +
+        '<h2>' +
+        escapeText(article.title) +
+        '</h2>' +
+        '<div class="article-body">' +
+        article.content +
+        '</div>';
+
+      dialog.showModal();
+    };
+  });
+}
+
+// ==========================================
+// WRITING TABS
+// ==========================================
+
+const writingTabs = [
+  ...document.querySelectorAll('[data-writing]')
+];
+
+writingTabs.forEach(button => {
+  button.onclick = () => {
+    writingMode = button.dataset.writing;
+
+    writingTabs.forEach(item => {
+      const active = item === button;
+
+      item.classList.toggle(
+        'active',
+        active
+      );
+
+      item.setAttribute(
+        'aria-selected',
+        String(active)
+      );
+
+      item.tabIndex = active ? 0 : -1;
+    });
 
     renderWriting();
+  };
+
+  button.onkeydown = event => {
+    if (
+      ![
+        'ArrowLeft',
+        'ArrowRight',
+        'Home',
+        'End'
+      ].includes(event.key)
+    ) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const next =
+      event.key === 'Home'
+        ? writingTabs[0]
+        : event.key === 'End'
+          ? writingTabs[writingTabs.length - 1]
+          : writingTabs[
+              event.key === 'ArrowRight'
+                ? (
+                    writingTabs.indexOf(button) + 1
+                  ) % writingTabs.length
+                : (
+                    writingTabs.indexOf(button) -
+                    1 +
+                    writingTabs.length
+                  ) % writingTabs.length
+            ];
+
+    next.click();
+    next.focus();
+  };
+});
+
+// ==========================================
+// WRITING SEARCH
+// ==========================================
+
+const writingSearch =
+  document.getElementById('writing-search');
+
+if (writingSearch) {
+  writingSearch.oninput = renderWriting;
+}
+
+// ==========================================
+// INITIAL RENDER
+// ==========================================
+
+renderWriting();

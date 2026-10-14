@@ -121,47 +121,57 @@
 
       </div>
 
-      <div class="visual">
-
+      <div class="visual network-visual">
         <div class="visual-top">
-
-          <span>IDEAS → INTERFACES</span>
-
-          <span class="tag">INTERACTIVE CONCEPT</span>
-
+            <span>CODE → CONNECTIONS → IMPACT</span>
+            <span class="tag">
+            <span class="network-live-dot"></span>
+            INTERACTIVE NETWORK
+            </span>
         </div>
 
-        <canvas
+        <div class="network-stage" id="network-stage">
+            <canvas
+            class="network-canvas"
+            id="ai-network"
+            aria-label="Interactive network representing software engineering, AI evaluation, and projects"
+            ></canvas>
 
-          class="globe"
+            <div class="network-center" aria-hidden="true">
+            <span class="network-center-icon">✳</span>
+            <span>BUILD · EVALUATE · IMPROVE</span>
+            </div>
 
-          id="globe"
-
-          aria-label="Illustrative rotating globe with response markers"
-
-        ></canvas>
-
-        <div class="visual-bottom">
-
-          <div>
-
-            <b>Survey globe concept.</b>
-
-            <p id="city">Inspired by my Urban Science survey globe</p>
-
-          </div>
-
-          <button class="globe-controls" id="rotate">Pause ↔</button>
-
+            <div class="network-tooltip" id="network-tooltip" hidden>
+            <span class="network-tooltip-type" id="network-tooltip-type"></span>
+            <strong id="network-tooltip-title"></strong>
+            <p id="network-tooltip-description"></p>
+            </div>
         </div>
 
-        <p style="font-size:10px;color:#91aa9b;margin-top:14px">
+        <div class="visual-bottom network-bottom">
+            <div>
+            <b id="network-title">Turning ideas into intelligent systems.</b>
+            <p id="network-description">
+                Software engineering · AI evaluation · Interactive systems
+            </p>
+            </div>
 
-          Canvas illustration · Sample markers only · Click to cycle city labels
+            <button
+            class="globe-controls network-controls"
+            id="rotate"
+            type="button"
+            aria-pressed="false"
+            >
+            Pause ↔
+            </button>
+        </div>
 
+        <p class="network-hint">
+            <span class="network-hint-dot"></span>
+            Explore the nodes to discover my work
         </p>
-
-      </div>
+        </div>
 
     </section>
 
