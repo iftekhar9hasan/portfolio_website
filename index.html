@@ -1,1916 +1,1203 @@
 <!doctype html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <meta name="description" content="Iftekhar Hasan — Computer Science graduate, software builder and AI evaluator.">
+
   <title>Iftekhar Hasan — Software & AI</title>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
-    :root {
-      --bg: #f7f7f0;
-      --ink: #172923;
-      --muted: #64716a;
-      --line: #d8ddd3;
-      --card: #fff;
-      --accent: #d1f36b;
-      --nav: #f7f7f0ee;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 16px 'DM Sans', sans-serif;
-    }
-
-    body.dark {
-      --bg: #111e1b;
-      --ink: #eef3e7;
-      --muted: #abb8ad;
-      --line: #34413a;
-      --card: #1a2b25;
-      --nav: #111e1bee;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-
-    button:focus-visible,
-    a:focus-visible {
-      outline: 3px solid #72a900;
-      outline-offset: 5px;
-    }
-
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-      padding: 0 32px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      background: var(--nav);
-      backdrop-filter: blur(16px);
-      z-index: 10;
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font: 800 24px Manrope, sans-serif;
-      letter-spacing: -1px;
-    }
-
-    .brand span { color: #809b3b; }
-
-    .navlinks {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 14px;
-    }
-
-    .navlinks a:hover { color: #77962c; }
-
-    .theme {
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: transparent;
-      color: var(--ink);
-      width: 38px;
-      height: 38px;
-    }
-
-    .nav-contact {
-      border: 1px solid var(--ink);
-      padding: 10px 17px;
-      border-radius: 24px;
-    }
-
-    .hero {
-      padding: 85px 0 65px;
-      display: grid;
-      grid-template-columns: 1.12fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      background: #82a73c;
-      border-radius: 50%;
-    }
-
-    h1 {
-      font: 600 clamp(42px, 5vw, 66px)/1.08 Manrope, sans-serif;
-      letter-spacing: -3px;
-      margin: 25px 0;
-    }
-
-    h1 em {
-      font-style: normal;
-      color: #7d9349;
-    }
-
-    p {
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .intro {
-      max-width: 460px;
-      font-size: 17px;
-    }
-
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      padding: 14px 22px;
-      border-radius: 7px;
-      background: var(--ink);
-      color: var(--bg);
-      border: 1px solid var(--ink);
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--line);
-    }
-
-    .small-note {
-      font-size: 12px;
-      margin-top: 28px;
-    }
-
-    .visual {
-      background: #19362d;
-      border-radius: 20px;
-      height: 430px;
-      color: #f1f6e8;
-      padding: 22px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 60px #17362b14;
-    }
-
-    .visual:after {
-      content: '';
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      background: #bfed6220;
-      filter: blur(70px);
-      left: 100px;
-      top: 100px;
-      pointer-events: none;
-    }
-
-    .visual-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: #c1d0c5;
-      letter-spacing: 1px;
-    }
-
-    .tag {
-      border: 1px solid #57745d;
-      border-radius: 20px;
-      padding: 5px 9px;
-      font-size: 10px;
-    }
-
-    .globe {
-      width: 100%;
-      height: 270px;
-      display: block;
-    }
-
-    .visual-bottom {
-      position: relative;
-      z-index: 2;
-      border-top: 1px solid #ffffff20;
-      padding-top: 17px;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-    }
-
-    .visual-bottom b { font-size: 15px; }
-
-    .visual-bottom p {
-      font-size: 11px;
-      color: #a9c1b1;
-      margin: 4px 0;
-    }
-
-    .globe-controls {
-      background: none;
-      color: #d1f36b;
-      border: 0;
-      font-size: 12px;
-    }
-
-    .trust {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 25px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .trust b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .section { padding: 85px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      font: 600 38px/1.2 Manrope, sans-serif;
-      letter-spacing: -1.4px;
-      margin: 13px 0 0;
-    }
-
-    .section-head p {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 26px;
-    }
-
-    .filter {
-      background: none;
-      border: 1px solid var(--line);
-      padding: 9px 18px;
-      border-radius: 30px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .filter.active {
-      background: var(--ink);
-      color: var(--bg);
-      border-color: var(--ink);
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .project {
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      overflow: hidden;
-      background: var(--card);
-      transition: transform .2s;
-    }
-
-    .project:hover { transform: translateY(-4px); }
-
-    .project.featured {
-      grid-column: 1/-1;
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-    }
-
-    .art {
-      height: 235px;
-      overflow: hidden;
-      position: relative;
-      background: #e6ece2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px;
-    }
-
-    .featured .art {
-      height: auto;
-      min-height: 320px;
-      background: #243f34;
-    }
-
-    .art svg { width: 100%; height: 100%; }
-
-    .project-body { padding: 28px; }
-
-    .project-top {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .project h3 {
-      font: 600 25px Manrope, sans-serif;
-      letter-spacing: -.7px;
-      margin: 14px 0;
-    }
-
-    .project p {
-      font-size: 14px;
-      margin: 0 0 19px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      font-size: 11px;
-      padding: 5px 9px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      color: var(--muted);
-    }
-
-    .case {
-      margin-top: 24px;
-      background: none;
-      border: 0;
-      border-bottom: 1px solid var(--ink);
-      padding: 0 0 5px;
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 13px;
-    }
-
-    .art-label {
-      position: absolute;
-      bottom: 12px;
-      left: 18px;
-      font-size: 9px;
-      letter-spacing: 1px;
-      color: #829888;
-    }
-
-    .dashboard {
-      width: 100%;
-      border: 1px solid #78948050;
-      background: #102b22;
-      border-radius: 9px;
-      padding: 15px;
-      color: #d6e8da;
-      box-shadow: 0 15px 40px #0003;
-    }
-
-    .dash-top {
-      font-size: 10px;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 13px;
-      border-bottom: 1px solid #fff2;
-    }
-
-    .dash-main {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 14px;
-      padding-top: 14px;
-    }
-
-    .dash-map {
-      height: 170px;
-      position: relative;
-      background: radial-gradient(ellipse, #496c43 0, transparent 65%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .dash-map svg { height: 160px; }
-
-    .dash-stat {
-      background: #ffffff08;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 8px;
-      font-size: 9px;
-    }
-
-    .dash-stat strong {
-      font-size: 25px;
-      display: block;
-      color: #d1f36b;
-    }
-
-    .experience {
-      background: var(--card);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .exp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.65fr;
-      gap: 70px;
-    }
-
-    .exp-row {
-      padding: 25px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .exp-row:first-child { padding-top: 0; }
-
-    .exp-row:last-child {
-      border: 0;
-      padding-bottom: 0;
-    }
-
-    .exp-meta {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .exp-row h3 {
-      font: 600 20px Manrope;
-      margin: 10px 0;
-    }
-
-    .exp-row p {
-      font-size: 14px;
-      margin: 0;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-    }
-
-    .about-grid p { font-size: 15px; }
-
-    .skill-row {
-      border-bottom: 1px solid var(--line);
-      padding: 18px 0;
-    }
-
-    .skill-row:first-child { padding-top: 0; }
-
-    .skill-row b {
-      font-size: 12px;
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .skill-row span {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .contact {
-      background: #d1f36b;
-      color: #193229;
-      border-radius: 17px;
-      padding: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-      margin-bottom: 65px;
-    }
-
-    .contact h2 {
-      font-size: 39px;
-      margin: 0;
-    }
-
-    .contact p {
-      color: #52683c;
-      margin: 12px 0 0;
-    }
-
-    .contact .btn {
-      background: #193229;
-      color: #fff;
-      border-color: #193229;
-      white-space: nowrap;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 25px 0;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .footer-links { display: flex; gap: 22px; }
-
-    dialog {
-      max-width: 760px;
-      width: calc(100% - 32px);
-      border: 1px solid var(--line);
-      background: var(--bg);
-      color: var(--ink);
-      border-radius: 16px;
-      padding: 35px;
-      max-height: 85vh;
-    }
-
-    dialog::backdrop {
-      background: #0b2019aa;
-      backdrop-filter: blur(5px);
-    }
-
-    .close {
-      float: right;
-      border: 1px solid var(--line);
-      background: none;
-      color: var(--ink);
-      border-radius: 50%;
-      height: 34px;
-      width: 34px;
-    }
-
-    dialog h2 { font-size: 30px; margin: 15px 0; }
-    dialog h3 { font-size: 15px; margin: 23px 0 7px; }
-
-    dialog p, dialog li {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .hidden { display: none !important; }
-    .project-links { display: flex; gap: 25px; }
-
-    .writing-toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 20px;
-    }
-
-    .writing-toolbar .filters { flex-shrink: 0; }
-
-    .search-label input {
-      border: 1px solid var(--line);
-      border-radius: 25px;
-      background: var(--card);
-      color: var(--ink);
-      font: inherit;
-      font-size: 13px;
-      padding: 11px 18px;
-      max-width: 100%;
-      width: 240px;
-    }
-
-    .count {
-      opacity: .65;
-      margin-left: 8px;
-      font-size: 11px;
-    }
-
-    .article-entry {
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: var(--card);
-      max-width: 850px;
-    }
-
-    .article-entry h3 {
-      font: 600 27px/1.3 Manrope;
-      letter-spacing: -.6px;
-      margin: 18px 0;
-    }
-
-    .article-meta {
-      font-size: 11px;
-      color: var(--muted);
-      letter-spacing: 1px;
-    }
-
-    .article-entry p { font-size: 15px; }
-
-    .thought-entry {
-      max-width: 850px;
-      border-bottom: 1px solid var(--line);
-      padding: 25px 0;
-      display: grid;
-      grid-template-columns: 40px 1fr;
-      gap: 18px;
-    }
-
-    .avatar {
-      height: 36px;
-      width: 36px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .thought-name { font-size: 13px; font-weight: 600; }
-
-    .thought-date {
-      font-size: 11px;
-      color: var(--muted);
-      margin-left: 10px;
-      font-weight: 400;
-    }
-
-    .thought-entry p {
-      white-space: pre-wrap;
-      margin: 12px 0 0;
-      font-size: 15px;
-    }
-
-    .writing-note { font-size: 12px; margin-top: 25px; }
-    .writing-note a { text-decoration: underline; }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-    }
-
-    #case-content .article-body h2 {
-      font-size: 21px;
-      margin-top: 25px;
-      letter-spacing: -.4px;
-    }
-
-    .real-cover {
-      padding: 22px;
-      background: #e7eade;
-    }
-
-    .real-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 6px 22px #203d1920;
-    }
-
-    @media (max-width: 800px) {
-      .wrap { padding: 0 22px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-top: 50px;
-      }
-
-      h1 { letter-spacing: -2px; }
-      .visual { height: 380px; }
-      .globe { height: 225px; }
-      .navlinks { gap: 15px; }
-      .navlinks .desktop { display: none; }
-
-      .trust {
-        flex-wrap: wrap;
-        justify-content: center;
-        font-size: 11px;
-      }
-
-      .section { padding: 55px 0; }
-      .section-head { display: block; }
-      .section-head p { margin-top: 15px; }
-      .project.featured { display: block; }
-      .featured .art { min-height: 260px; }
-      .projects { grid-template-columns: 1fr; }
-
-      .exp-grid, .about-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .contact { padding: 30px; display: block; }
-      .contact h2 { font-size: 30px; }
-      .contact .btn { margin-top: 25px; }
-      .footer-content { flex-direction: column; }
-      .filters { flex-wrap: wrap; }
-      h2 { font-size: 32px; }
-    }
-
-    @media (max-width: 600px) {
-      .writing-toolbar { display: block; }
-
-      .search-label input {
-        width: 100%;
-        margin-bottom: 22px;
-      }
-
-      .thought-date {
-        display: block;
-        margin: 5px 0 0;
-      }
-
-      .article-entry { padding: 24px; }
-      .article-entry h3 { font-size: 23px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .project { transition: none; }
-    }
-  </style>
 </head>
 
 <body>
+
   <a
+
     href="#work"
+
     style="position:absolute;left:-9999px"
+
     onfocus="this.style.left='10px'"
+
     onblur="this.style.left='-9999px'"
+
   >Skip to work</a>
 
   <header>
+
     <nav class="wrap">
+
       <a class="brand" href="#">ih<span>.</span></a>
 
       <div class="navlinks">
+
         <a href="#work">Work</a>
+
         <a href="#experience" class="desktop">Experience</a>
+
         <a href="#writing">Writing</a>
+
         <a href="#about" class="desktop">About</a>
+
         <button class="theme" aria-label="Switch color theme">◐</button>
+
         <a class="nav-contact" href="#contact">Let's connect ↗</a>
+
       </div>
+
     </nav>
+
   </header>
 
   <main class="wrap">
+
     <section class="hero">
+
       <div>
+
         <div class="eyebrow">
+
           <span class="dot"></span>
+
           Software engineering · AI evaluation
+
         </div>
 
         <h1>
+
           Thoughtful code.<br>
+
           Useful products.<br>
+
           <em>Human impact.</em>
+
         </h1>
 
         <p class="intro">
+
           I'm Iftekhar Hasan, a Computer Science graduate from Wayne State.
+
           I build web experiences and evaluate AI systems with an eye for
+
           clarity, reliability, and the people using them.
+
         </p>
 
         <div class="actions">
+
           <a class="btn" href="#work">
+
             Explore my work <span>↘</span>
+
           </a>
 
           <a
+
             class="btn secondary"
+
             href="https://iftekharhasan.netlify.app/assets/Hasan.Iftekhar.resume.pdf"
+
             target="_blank"
+
             rel="noopener"
+
           >View resume ↗</a>
+
         </div>
 
         <div class="small-note">
+
           Based in Detroit, Michigan · Open to opportunities
+
         </div>
+
       </div>
 
       <div class="visual">
+
         <div class="visual-top">
+
           <span>IDEAS → INTERFACES</span>
+
           <span class="tag">INTERACTIVE CONCEPT</span>
+
         </div>
 
         <canvas
+
           class="globe"
+
           id="globe"
+
           aria-label="Illustrative rotating globe with response markers"
+
         ></canvas>
 
         <div class="visual-bottom">
+
           <div>
+
             <b>Survey globe concept.</b>
+
             <p id="city">Inspired by my Urban Science survey globe</p>
+
           </div>
 
           <button class="globe-controls" id="rotate">Pause ↔</button>
+
         </div>
 
         <p style="font-size:10px;color:#91aa9b;margin-top:14px">
+
           Canvas illustration · Sample markers only · Click to cycle city labels
+
         </p>
+
       </div>
+
     </section>
 
     <div class="trust">
+
       <span><b>Wayne State University</b> / B.S. Computer Science</span>
+
       <span><b>Urban Science</b> / Capstone collaboration</span>
+
       <span><b>Handshake + Outlier</b> / AI evaluation</span>
+
     </div>
 
     <section id="work" class="section">
+
       <div class="section-head">
+
         <div>
+
           <div class="eyebrow">01 / Selected work</div>
+
           <h2>Built with purpose.</h2>
+
         </div>
 
         <p>A few projects. A closer look at the thinking behind them.</p>
+
       </div>
 
       <div class="filters" aria-label="Filter projects">
+
         <button class="filter active" data-filter="all" aria-pressed="true">
+
           All work
+
         </button>
+
         <button class="filter" data-filter="web" aria-pressed="false">
+
           Web applications
+
         </button>
+
         <button class="filter" data-filter="ml" aria-pressed="false">
+
           Machine learning
+
         </button>
+
         <button class="filter" data-filter="desktop" aria-pressed="false">
+
           Desktop
+
         </button>
+
         <button class="filter" data-filter="data" aria-pressed="false">
+
           Data analysis
+
         </button>
+
       </div>
 
       <div class="projects">
+
         <article class="project featured" data-category="web">
+
           <div class="art">
+
             <div class="dashboard">
+
               <div class="dash-top">
+
                 <span>URBAN SCIENCE / SURVEY OVERVIEW</span>
+
                 <span style="color:#d1f36b">● Concept preview</span>
+
               </div>
 
               <div class="dash-main">
+
                 <div class="dash-map">
+
                   <svg viewBox="0 0 220 170" fill="none">
+
                     <circle cx="110" cy="85" r="75" stroke="#9aba82"/>
+
                     <ellipse cx="110" cy="85" rx="37" ry="75" stroke="#799b70"/>
+
                     <ellipse cx="110" cy="85" rx="75" ry="27" stroke="#799b70"/>
+
                     <path d="M35 85H185M110 10V160" stroke="#799b70"/>
+
                     <path
+
                       d="M69 38L90 28 105 45 88 62 78 90 65 75 55 59M130 49L151 43 171 68 145 84 134 120 119 100 122 76"
+
                       fill="#628253"
+
                       stroke="#91ae71"
+
                     />
+
                     <circle cx="74" cy="55" r="5" fill="#d1f36b"/>
+
                     <circle cx="135" cy="67" r="5" fill="#d1f36b"/>
+
                     <circle cx="154" cy="102" r="5" fill="#ebb583"/>
+
                   </svg>
+
                 </div>
 
                 <div>
+
                   <div class="dash-stat">
+
                     CREATE
+
                     <strong>Survey</strong>
+
                     Questions → recipients
+
                   </div>
 
                   <div class="dash-stat">
+
                     EXPLORE
+
                     <strong>Globe</strong>
+
                     Responses → locations
+
                   </div>
+
                 </div>
+
               </div>
+
             </div>
 
             <span class="art-label">ILLUSTRATIVE INTERFACE</span>
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Featured / Client capstone</span>
+
               <span>01</span>
+
             </div>
 
             <h3>NPS Survey Platform</h3>
 
             <p>
+
               From creating and emailing surveys to exploring responses on an
+
               interactive 3D globe. Built with a team for Urban Science in Detroit.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">React</span>
+
               <span class="chip">Tailwind CSS</span>
+
               <span class="chip">Mapbox GL JS</span>
+
             </div>
 
             <button class="case" data-case="nps">
+
               Explore the case study ↗
+
             </button>
+
           </div>
+
         </article>
 
         <article class="project" data-category="ml">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Stock_Price.png"
+
               alt="Stock Price Prediction project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Independent / Machine learning</span>
+
               <span>02</span>
+
             </div>
 
             <h3>Stock Price Prediction</h3>
 
             <p>
+
               A Flask application connecting a two-layer LSTM model with
+
               interactive historical and predicted price charts.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">Python</span>
+
               <span class="chip">Flask</span>
+
               <span class="chip">TensorFlow</span>
+
               <span class="chip">Chart.js</span>
+
             </div>
 
             <button class="case" data-case="stock">
+
               Explore the case study ↗
+
             </button>
+
           </div>
+
         </article>
 
         <article class="project" data-category="web">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Pomodoro_screen_01.png"
+
               alt="Pomodoro Enhancer project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Independent / Web application</span>
+
               <span>03</span>
+
             </div>
 
             <h3>Pomodoro Enhancer</h3>
 
             <p>
+
               A focus timer with customizable settings and background music.
+
               A small tool designed around a familiar daily need.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">JavaScript</span>
+
               <span class="chip">HTML</span>
+
               <span class="chip">CSS</span>
+
             </div>
 
             <button class="case" data-case="timer">
+
               Explore the project ↗
+
             </button>
+
           </div>
+
         </article>
 
         <article class="project" data-category="desktop">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Employe_Management.png"
+
               alt="Employee Management System project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Team project / Desktop</span>
+
               <span>04</span>
+
             </div>
 
             <h3>Employee Management System</h3>
 
             <p>
+
               A platform for Crosscut Landscaping with registration, secure
+
               logins, messaging, and job management.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">Python</span>
+
               <span class="chip">CustomTkinter</span>
+
               <span class="chip">AWS S3</span>
+
             </div>
 
             <div class="project-links">
+
               <a
+
                 class="case"
+
                 href="https://github.com/Sadman988/Group-Project-3---Employee-Management-System"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Source code ↗</a>
+
             </div>
+
           </div>
+
         </article>
 
         <article class="project" data-category="web">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Detroit_Tech_Innov.png"
+
               alt="Detroit Tech Innovators project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Web application</span>
+
               <span>05</span>
+
             </div>
 
             <h3>Detroit Tech Innovators</h3>
 
             <p>
+
               A digital hub for Detroit tech education, programs, innovation
+
               challenges, startup resources, and events.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">HTML</span>
+
               <span class="chip">CSS</span>
+
               <span class="chip">JavaScript</span>
+
             </div>
 
             <div class="project-links">
+
               <a
+
                 class="case"
+
                 href="https://github.com/iftekhar9hasan/DETROIT-TECH-INNOVATORS"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Source code ↗</a>
 
               <a
+
                 class="case"
+
                 href="https://detroittechinnovators.netlify.app/"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Live project ↗</a>
+
             </div>
+
           </div>
+
         </article>
 
         <article class="project" data-category="desktop">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Discrete.Puzzle.01.png"
+
               alt="Discrete Logic Puzzle Game project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Desktop / Logic game</span>
+
               <span>06</span>
+
             </div>
 
             <h3>Discrete Logic Puzzle Game</h3>
 
             <p>
+
               A Python puzzle game applying discrete math, with puzzle generation,
+
               row checking, and input validation.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">Python</span>
+
               <span class="chip">Tkinter</span>
+
             </div>
 
             <div class="project-links">
+
               <a
+
                 class="case"
+
                 href="https://github.com/iftekhar9hasan/Interactive-Discreate-Logic-Puzzle-Game-"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Source code ↗</a>
+
             </div>
+
           </div>
+
         </article>
 
         <article class="project" data-category="desktop">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/Snake_Game_01.png"
+
               alt="Snake Game project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Desktop / Game</span>
+
               <span>07</span>
+
             </div>
 
             <h3>Snake Game</h3>
 
             <p>
+
               A Java Swing game with grid movement, fruit collection, scoring,
+
               collision detection, and game-over handling.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">Java</span>
+
               <span class="chip">Swing</span>
+
             </div>
 
             <div class="project-links">
+
               <a
+
                 class="case"
+
                 href="https://github.com/iftekhar9hasan/SnakeGame"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Source code ↗</a>
+
             </div>
+
           </div>
+
         </article>
 
         <article class="project" data-category="data">
+
           <div class="art real-cover">
+
             <img
+
               src="assets/exploratory.jpg"
+
               alt="Exploratory Data Analysis project screenshot"
+
               loading="lazy"
+
             >
+
           </div>
 
           <div class="project-body">
+
             <div class="project-top">
+
               <span>Data analysis</span>
+
               <span>08</span>
+
             </div>
 
             <h3>Exploratory Data Analysis</h3>
 
             <p>
+
               Exploration of an auto dataset through cleaning, outlier handling,
+
               correlation plots, and Pearson correlation.
+
             </p>
 
             <div class="chips">
+
               <span class="chip">Python</span>
+
               <span class="chip">Matplotlib</span>
+
               <span class="chip">Pandas</span>
+
               <span class="chip">NumPy</span>
+
             </div>
 
             <div class="project-links">
+
               <a
+
                 class="case"
+
                 href="https://github.com/iftekhar9hasan/Exploratory-Data-Analysis-for-Auto-Dataset"
+
                 target="_blank"
+
                 rel="noopener"
+
               >Source code ↗</a>
+
             </div>
+
           </div>
+
         </article>
+
       </div>
+
     </section>
+
   </main>
 
-  <section class="experience" id="experience">
-    <div class="wrap section exp-grid">
-      <div>
+  
+<section class="experience section" id="experience">
+<div class="wrap">
+    <div class="exp-grid">
+
+    <!-- Left column -->
+    <div>
         <div class="eyebrow">02 / Experience</div>
-        <h2>Building software.<br>Improving AI.</h2>
+
+        <h2>
+        Building software.<br>
+        Improving AI.
+        </h2>
 
         <p>
-          Practical development experience, paired with careful evaluation
-          and testing.
+        Practical development experience, paired with
+        careful evaluation and testing.
         </p>
-      </div>
+    </div>
 
-      <div>
+    <!-- Right column -->
+    <div>
+
         <article class="exp-row">
-          <div class="exp-meta">
+        <div class="exp-meta">
             <span>Handshake</span>
             <span>October 2025 – Present</span>
-          </div>
+        </div>
 
-          <h3>AI Trainer & Auditor</h3>
+        <h3>AI Trainer &amp; Auditor</h3>
 
-          <p>
-            Write Python fail-to-pass tests, analyze model outputs, and apply
-            structured evaluation criteria to help improve model quality.
-          </p>
+        <p>
+            Write Python fail-to-pass tests, analyze model
+            outputs, and apply structured evaluation criteria
+            to help improve model quality.
+        </p>
         </article>
 
         <article class="exp-row">
-          <div class="exp-meta">
+        <div class="exp-meta">
             <span>Urban Science</span>
             <span>University capstone</span>
-          </div>
+        </div>
 
-          <h3>Front-end & Documentation Lead</h3>
+        <h3>Front-end &amp; Documentation Lead</h3>
 
-          <p>
-            Built core survey features, email delivery functionality, and a
-            real-time globe visualization while coordinating documentation
-            with the team.
-          </p>
+        <p>
+            Built core survey features, email delivery
+            functionality, and a real-time globe visualization
+            while coordinating documentation with the team.
+        </p>
         </article>
 
         <article class="exp-row">
-          <div class="exp-meta">
+        <div class="exp-meta">
             <span>Outlier AI</span>
             <span>AI evaluation</span>
-          </div>
+        </div>
 
-          <h3>AI Evaluator</h3>
+        <h3>AI Evaluator</h3>
 
-          <p>
-            Evaluated responses for accuracy, instruction-following, and
-            completeness, with experience across text and audio tasks.
-          </p>
+        <p>
+            Evaluated responses for accuracy,
+            instruction-following, and completeness,
+            with experience across text and audio tasks.
+        </p>
         </article>
-      </div>
+
     </div>
-  </section>
+    </div>
+</div>
+</section>
+
 
   <div class="wrap">
+
     <section id="about" class="section about-grid">
+
       <div>
+
         <div class="eyebrow">03 / A little about me</div>
+
         <h2>Curious by nature.<br>Practical by approach.</h2>
 
         <p>
+
           I started programming in 2021 and earned my B.S. in Computer Science
+
           at Wayne State University. My work spans web development, machine
+
           learning projects, Android features, and AI evaluation.
+
         </p>
 
         <p>
+
           I enjoy making complex things easier to use. Whether I'm building
+
           an interface or reviewing an AI response, I care about clear behavior
+
           and reliable results.
+
         </p>
 
         <a
+
           class="case"
+
           href="https://github.com/iftekhar9hasan"
+
           target="_blank"
+
           rel="noopener"
+
         >More on GitHub ↗</a>
+
       </div>
 
       <div>
+
         <div class="skill-row">
+
           <b>LANGUAGES</b>
+
           <span>
+
             Python · JavaScript · TypeScript · Java · C++ · C# · SQL
+
           </span>
+
         </div>
 
         <div class="skill-row">
+
           <b>WEB & APPLICATIONS</b>
+
           <span>
+
             React · Tailwind CSS · Flask · ASP.NET Core · Firebase · Mapbox GL JS
+
           </span>
+
         </div>
 
         <div class="skill-row">
+
           <b>AI & QUALITY</b>
+
           <span>
+
             Model evaluation · Python test automation · Rubric design ·
+
             Multimodal annotation
+
           </span>
+
         </div>
 
         <div class="skill-row">
+
           <b>HOW I WORK</b>
+
           <span>
+
             Understand the problem. Build clearly. Check the details.
+
             Keep learning.
+
           </span>
+
         </div>
+
       </div>
+
     </section>
 
     <section id="writing" class="section">
+
       <div class="section-head">
+
         <div>
+
           <div class="eyebrow">04 / Writing & reflection</div>
+
           <h2>Long stories. Small thoughts.</h2>
+
         </div>
 
         <p>A space for things I learn, question, and notice.</p>
+
       </div>
 
       <div class="writing-toolbar">
+
         <div class="filters" role="tablist" aria-label="Writing type">
+
           <button
+
             class="filter active"
+
             id="articles-tab"
+
             role="tab"
+
             aria-selected="true"
+
             aria-controls="articles-panel"
+
             data-writing="articles"
+
           >
+
             Blog posts <span class="count">1</span>
+
           </button>
 
           <button
+
             class="filter"
+
             id="thoughts-tab"
+
             role="tab"
+
             aria-selected="false"
+
             aria-controls="thoughts-panel"
+
             data-writing="thoughts"
+
             tabindex="-1"
+
           >
+
             Thoughts <span class="count">6</span>
+
           </button>
+
         </div>
 
         <label class="search-label">
+
           <span class="sr-only">Search writing</span>
+
           <input
+
             id="writing-search"
+
             type="search"
+
             placeholder="Search my writing…"
+
           >
+
         </label>
+
       </div>
 
       <div
+
         id="articles-panel"
+
         role="tabpanel"
+
         aria-labelledby="articles-tab"
+
       ></div>
 
       <div
+
         id="thoughts-panel"
+
         role="tabpanel"
+
         aria-labelledby="thoughts-tab"
+
         hidden
+
       ></div>
 
       <p id="writing-empty" hidden>
+
         No matching writing. Try a different search.
+
       </p>
 
       <p class="writing-note">
+
         Writing from my original portfolio.
+
         <a
+
           href="https://iftekharhasan.netlify.app/pages/blog"
+
           target="_blank"
+
           rel="noopener"
+
         >Visit the original archive ↗</a>
+
       </p>
+
     </section>
 
     <section class="contact" id="contact">
+
       <div>
+
         <div class="eyebrow" style="margin-bottom:16px">
+
           05 / What's next?
+
         </div>
 
         <h2>Let's build something useful.</h2>
 
         <p>
+
           Interested in software engineering and AI quality opportunities.
+
         </p>
+
       </div>
 
       <a
+
         class="btn"
+
         href="https://www.linkedin.com/in/iftekharhasan09"
+
         target="_blank"
+
         rel="noopener"
+
       >Connect on LinkedIn ↗</a>
+
     </section>
+
   </div>
 
   <footer>
+
     <div class="wrap footer-content">
+
       <span>
+
         © <span id="year"></span> Iftekhar Hasan · Made with intention.
+
       </span>
 
       <div class="footer-links">
+
         <a
+
           href="https://github.com/iftekhar9hasan"
+
           target="_blank"
+
           rel="noopener"
+
         >GitHub ↗</a>
 
         <a
+
           href="https://www.linkedin.com/in/iftekharhasan09"
+
           target="_blank"
+
           rel="noopener"
+
         >LinkedIn ↗</a>
 
         <a href="#">Back to top ↑</a>
+
       </div>
+
     </div>
+
   </footer>
 
   <dialog id="case-dialog">
+
     <button class="close" aria-label="Close case study">×</button>
+
     <div id="case-content"></div>
+
   </dialog>
 
   <script src="scripts/blog-data.js"></script>
+  <script src="js/main.js" defer></script>
 
-  <script>
-    // PROJECT CASE STUDIES
-    const cases = {
-      nps: {
-        label: 'CLIENT CAPSTONE / URBAN SCIENCE',
-        title: 'NPS Survey Platform',
-        intro: 'A team-built platform for creating surveys, emailing recipients, and exploring feedback by location.',
-        role: 'Front-end lead and documentation lead. My core contributions included survey creation and sending, email delivery, and the interactive 3D globe.',
-        challenge: 'Make incoming feedback easy to notice and explore without forcing admins to navigate a long static list.',
-        approach: 'Used React and Tailwind CSS for the interface and Mapbox GL JS for the globe. Responses appeared as color-coded markers; clicking a marker exposed its city, score, and response. New responses could bring the globe to the relevant location.',
-        learning: 'Real-time interfaces need careful coordination between incoming data, component readiness, and rendering. Clear documentation also helped the team stay aligned.',
-        links: []
-      },
-
-      stock: {
-        label: 'INDEPENDENT PROJECT / MACHINE LEARNING',
-        title: 'Stock Price Prediction',
-        intro: 'A full-stack project exploring how sequence models can connect to a usable web interface.',
-        role: 'Built a Python and Flask backend around a two-layer LSTM, alongside an interactive chart interface.',
-        challenge: 'Transform historical prices into correctly shaped training sequences while keeping the prediction workflow understandable.',
-        approach: 'Used a 60-day sliding window, Adam optimization, and mean squared error loss. The frontend accepted a ticker and displayed predictions alongside historical prices.',
-        learning: 'Data preparation and chronological evaluation are central to time-series modeling. This project explores predictions; it does not establish reliable investment performance.',
-        links: [
-          [
-            'Source code',
-            'https://github.com/iftekhar9hasan/stock-price-prediction'
-          ]
-        ]
-      },
-
-      timer: {
-        label: 'INDEPENDENT PROJECT / WEB APPLICATION',
-        title: 'Pomodoro Enhancer',
-        intro: 'A browser-based focus timer with customizable settings and background music.',
-        role: 'Built the interface and timer experience using HTML, CSS, and JavaScript.',
-        challenge: 'Keep a productivity tool simple enough to use without distracting from the task at hand.',
-        approach: 'Organized the experience around the timer, with settings and music supporting the focus session.',
-        learning: 'Small applications are a useful place to practice clear state transitions and intuitive controls.',
-        links: [
-          [
-            'Live project',
-            'https://promodoro-enhancer.netlify.app/'
-          ],
-          [
-            'Source code',
-            'https://github.com/iftekhar9hasan/Pomodoro-Times'
-          ]
-        ]
-      }
-    };
-
-    // PROJECT FILTERS
-    document.querySelectorAll('.filter[data-filter]').forEach(button => {
-      button.onclick = () => {
-        document.querySelectorAll('.filter[data-filter]').forEach(item => {
-          item.classList.toggle('active', item === button);
-          item.setAttribute('aria-pressed', item === button);
-        });
-
-        document.querySelectorAll('.project').forEach(project => {
-          const hide =
-            button.dataset.filter !== 'all' &&
-            project.dataset.category !== button.dataset.filter;
-
-          project.classList.toggle('hidden', hide);
-        });
-      };
-    });
-
-    // DIALOGS
-    const dialog = document.getElementById('case-dialog');
-
-    document.querySelectorAll('[data-case]').forEach(button => {
-      button.onclick = () => {
-        const project = cases[button.dataset.case];
-
-        document.getElementById('case-content').innerHTML =
-          '<div class="eyebrow">' + project.label + '</div>' +
-          '<h2>' + project.title + '</h2>' +
-          '<p>' + project.intro + '</p>' +
-          [
-            ['My contribution', project.role],
-            ['The challenge', project.challenge],
-            ['The approach', project.approach],
-            ['What I learned', project.learning]
-          ].map(([heading, text]) =>
-            '<h3>' + heading + '</h3><p>' + text + '</p>'
-          ).join('') +
-          '<div class="actions">' +
-          project.links.map(([text, url]) =>
-            '<a class="btn" target="_blank" rel="noopener" href="' +
-            url + '">' + text + ' ↗</a>'
-          ).join('') +
-          '</div>';
-
-        dialog.showModal();
-      };
-    });
-
-    document.querySelector('.close').onclick = () => dialog.close();
-
-    dialog.addEventListener('click', event => {
-      if (event.target === dialog) {
-        const bounds = dialog.getBoundingClientRect();
-
-        if (
-          event.clientX < bounds.left ||
-          event.clientX > bounds.right ||
-          event.clientY < bounds.top ||
-          event.clientY > bounds.bottom
-        ) {
-          dialog.close();
-        }
-      }
-    });
-
-    // THEME
-    let theme = localStorage.getItem('portfolio-theme');
-
-    if (theme === 'dark') {
-      document.body.classList.add('dark');
-    }
-
-    document.querySelector('.theme').onclick = () => {
-      document.body.classList.toggle('dark');
-
-      localStorage.setItem(
-        'portfolio-theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-      );
-    };
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ANIMATED GLOBE
-    const canvas = document.getElementById('globe');
-    const ctx = canvas.getContext('2d');
-
-    let angle = 0;
-    let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let cityIndex = 0;
-
-    const cities = [
-      'Detroit — where the capstone began',
-      'London — illustrative response marker',
-      'Tokyo — illustrative response marker',
-      'Sydney — illustrative response marker'
-    ];
-
-    const pauseButton = document.getElementById('rotate');
-
-    function updatePause() {
-      pauseButton.textContent = paused ? 'Rotate ↔' : 'Pause ↔';
-    }
-
-    updatePause();
-
-    pauseButton.onclick = () => {
-      paused = !paused;
-      updatePause();
-    };
-
-    canvas.onclick = () => {
-      cityIndex = (cityIndex + 1) % cities.length;
-      document.getElementById('city').textContent = cities[cityIndex];
-      angle += .7;
-    };
-
-    function frame() {
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
-      const ratio = Math.min(devicePixelRatio || 1, 2);
-
-      if (
-        canvas.width !== width * ratio ||
-        canvas.height !== height * ratio
-      ) {
-        canvas.width = width * ratio;
-        canvas.height = height * ratio;
-      }
-
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-      ctx.clearRect(0, 0, width, height);
-
-      const radius = Math.min(width * .34, height * .44);
-      const centerX = width / 2;
-      const centerY = height / 2;
-
-      const glow = ctx.createRadialGradient(
-        centerX - radius * .3,
-        centerY - radius * .3,
-        10,
-        centerX,
-        centerY,
-        radius
-      );
-
-      glow.addColorStop(0, '#405b39');
-      glow.addColorStop(1, '#142f28');
-
-      ctx.fillStyle = glow;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-      ctx.fill();
-
-      ctx.strokeStyle = '#88a66b80';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-
-      // Latitude rings
-      for (let latitude = -60; latitude <= 60; latitude += 30) {
-        const y =
-          centerY + radius * Math.sin(latitude * Math.PI / 180);
-
-        const ringRadius =
-          radius * Math.cos(latitude * Math.PI / 180);
-
-        ctx.beginPath();
-        ctx.ellipse(
-          centerX,
-          y,
-          ringRadius,
-          ringRadius * .17,
-          0,
-          0,
-          Math.PI * 2
-        );
-        ctx.stroke();
-      }
-
-      // Rotating longitude rings
-      for (let longitude = 0; longitude < 8; longitude++) {
-        const rotation = angle + longitude * Math.PI / 8;
-
-        ctx.beginPath();
-        ctx.ellipse(
-          centerX,
-          centerY,
-          Math.max(.1, Math.abs(Math.cos(rotation)) * radius),
-          radius,
-          0,
-          0,
-          Math.PI * 2
-        );
-        ctx.stroke();
-      }
-
-      // Sample markers
-      const points = [
-        [.45, -.4],
-        [1.8, .1],
-        [3.2, -.1],
-        [4.8, .6],
-        [5.5, -.5]
-      ];
-
-      points.forEach(([longitude, latitude], index) => {
-        const rotation = longitude + angle;
-        const depth = Math.cos(rotation) * Math.cos(latitude);
-
-        if (depth < 0) return;
-
-        const x =
-          centerX + radius * Math.sin(rotation) * Math.cos(latitude);
-
-        const y = centerY + radius * Math.sin(latitude);
-
-        ctx.fillStyle = index === cityIndex ? '#efffb5' : '#d1f36b';
-
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.strokeStyle = '#d1f36b40';
-        ctx.beginPath();
-        ctx.arc(x, y, 9, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-
-      if (!paused) angle += .002;
-
-      requestAnimationFrame(frame);
-    }
-
-    frame();
-
-    // BLOG AND THOUGHTS
-    const writingData = {
-      articles: window.blogArticles,
-      thoughts: window.blogThoughts
-    };
-
-    let writingMode = 'articles';
-
-    const escapeText = value =>
-      String(value).replace(/[&<>"']/g, character => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      }[character]));
-
-    function renderWriting() {
-      const query = document.getElementById('writing-search')
-        .value.toLowerCase().trim();
-
-      const items = writingData[writingMode].filter(item =>
-        [
-          item.title,
-          item.summary,
-          item.text,
-          item.category,
-          item.content
-        ]
-          .filter(Boolean)
-          .join(' ')
-          .toLowerCase()
-          .includes(query)
-      );
-
-      document.getElementById('articles-panel').hidden =
-        writingMode !== 'articles';
-
-      document.getElementById('thoughts-panel').hidden =
-        writingMode !== 'thoughts';
-
-      document.getElementById('writing-empty').hidden = items.length > 0;
-
-      const panel = document.getElementById(writingMode + '-panel');
-
-      panel.innerHTML = items.map(item =>
-        writingMode === 'articles'
-          ? '<article class="article-entry">' +
-            '<div class="article-meta">' +
-            escapeText(item.category) + ' / ' + escapeText(item.date) +
-            '</div><h3>' + escapeText(item.title) + '</h3>' +
-            '<p>' + escapeText(item.summary) + '</p>' +
-            '<button class="case" data-article="' + item.id + '">' +
-            'Read the story ↗</button></article>'
-          : '<article class="thought-entry">' +
-            '<div class="avatar" aria-hidden="true">ih.</div>' +
-            '<div><div class="thought-name">Iftekhar Hasan' +
-            '<span class="thought-date">' +
-            escapeText(item.date) +
-            '</span></div><p>' +
-            escapeText(item.text) +
-            '</p></div></article>'
-      ).join('');
-
-      panel.querySelectorAll('[data-article]').forEach(button => {
-        button.onclick = () => {
-          const article = writingData.articles.find(item =>
-            String(item.id) === button.dataset.article
-          );
-
-          document.getElementById('case-content').innerHTML =
-            '<div class="eyebrow">' +
-            escapeText(article.category) + ' / ' +
-            escapeText(article.date) +
-            '</div><h2>' +
-            escapeText(article.title) +
-            '</h2><div class="article-body">' +
-            article.content +
-            '</div>';
-
-          dialog.showModal();
-        };
-      });
-    }
-
-    const writingTabs = [
-      ...document.querySelectorAll('[data-writing]')
-    ];
-
-    writingTabs.forEach(button => {
-      button.onclick = () => {
-        writingMode = button.dataset.writing;
-
-        writingTabs.forEach(item => {
-          item.classList.toggle('active', item === button);
-          item.setAttribute(
-            'aria-selected',
-            String(item === button)
-          );
-          item.tabIndex = item === button ? 0 : -1;
-        });
-
-        renderWriting();
-      };
-
-      button.onkeydown = event => {
-        if (
-          ['ArrowLeft', 'ArrowRight', 'Home', 'End']
-            .includes(event.key)
-        ) {
-          event.preventDefault();
-
-          const next =
-            event.key === 'Home'
-              ? writingTabs[0]
-              : event.key === 'End'
-                ? writingTabs[1]
-                : writingTabs[1 - writingTabs.indexOf(button)];
-
-          next.click();
-          next.focus();
-        }
-      };
-    });
-
-    document.getElementById('writing-search').oninput = renderWriting;
-    renderWriting();
-  </script>
 </body>
+
 </html>

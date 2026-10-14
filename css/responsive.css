@@ -1,0 +1,129 @@
+@media (max-width: 800px) {
+
+      .wrap { padding: 0 22px; }
+
+      .hero {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding-top: 50px;
+
+      }
+
+      h1 { letter-spacing: -2px; }
+
+      .visual { height: 380px; }
+
+      .globe { height: 225px; }
+
+      .navlinks { gap: 15px; }
+
+      .navlinks .desktop { display: none; }
+
+      .trust {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        font-size: 11px;
+
+      }
+
+      .section { padding: 55px 0; }
+
+      .section-head { display: block; }
+
+      .section-head p { margin-top: 15px; }
+
+      .project.featured { display: block; }
+
+      .featured .art { min-height: 260px; }
+
+      .projects { grid-template-columns: 1fr; }
+
+      .exp-grid, .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+      }
+
+      .contact { padding: 30px; display: block; }
+
+      .contact h2 { font-size: 30px; }
+
+      .contact .btn { margin-top: 25px; }
+
+      .footer-content { flex-direction: column; }
+
+      .filters { flex-wrap: wrap; }
+
+      h2 { font-size: 32px; }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .writing-toolbar { display: block; }
+
+      .search-label input {
+
+        width: 100%;
+
+        margin-bottom: 22px;
+
+      }
+
+      .thought-date {
+
+        display: block;
+
+        margin: 5px 0 0;
+
+      }
+
+      .article-entry { padding: 24px; }
+
+      .article-entry h3 { font-size: 23px; }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html { scroll-behavior: auto; }
+
+      .project { transition: none; }
+
+    }
+
+/* Experience: align the responsive breakpoint with About and Projects. */
+.exp-grid > div { min-width: 0; }
+.exp-meta { flex-wrap: wrap; overflow-wrap: anywhere; }
+
+
+/* EXPERIENCE RESPONSIVENESS */
+
+@media (max-width: 800px) {
+  .exp-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .exp-meta {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .exp-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
