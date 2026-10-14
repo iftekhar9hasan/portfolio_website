@@ -136,28 +136,6 @@ if (dialog) {
   });
 }
 
-// ==========================================
-// LIGHT / DARK THEME
-// ==========================================
-
-const savedTheme = localStorage.getItem('portfolio-theme');
-
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark');
-}
-
-const themeButton = document.querySelector('.theme');
-
-if (themeButton) {
-  themeButton.onclick = () => {
-    document.body.classList.toggle('dark');
-
-    localStorage.setItem(
-      'portfolio-theme',
-      document.body.classList.contains('dark') ? 'dark' : 'light'
-    );
-  };
-}
 
 // ==========================================
 // COPYRIGHT YEAR
