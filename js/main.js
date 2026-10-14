@@ -1256,3 +1256,61 @@ if (writingSearch) {
 // ==========================================
 
 renderWriting();
+
+
+// ==========================================
+// MOBILE NAVIGATION
+// ==========================================
+
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuToggle && mobileMenu) {
+  function closeMobileMenu() {
+    mobileMenu.hidden = true;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute(
+      'aria-label',
+      'Open navigation menu'
+    );
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+    mobileMenu.hidden = isOpen;
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Open navigation menu' : 'Close navigation menu'
+    );
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !mobileMenu.hidden) {
+      closeMobileMenu();
+      menuToggle.focus();
+    }
+  });
+
+  document.addEventListener('click', event => {
+    if (
+      !mobileMenu.hidden &&
+      !mobileMenu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      closeMobileMenu();
+    }
+  });
+
+  window.matchMedia('(min-width: 801px)').addEventListener(
+    'change',
+    event => {
+      if (event.matches) closeMobileMenu();
+    }
+  );
+}
