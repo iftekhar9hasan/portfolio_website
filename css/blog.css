@@ -1,0 +1,262 @@
+
+/* Dedicated Writing Page */
+
+.blog-page {
+  min-height: 100vh;
+}
+
+.blog-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.blog-logo span {
+  color: #7b9c30;
+}
+
+.blog-back {
+  font-size: 13px;
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.blog-back:hover {
+  color: var(--ink);
+}
+
+.blog-intro {
+  padding: 94px 0 76px;
+}
+
+.blog-intro .eyebrow {
+  margin-bottom: 24px;
+}
+
+.blog-intro h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(44px, 6vw, 82px);
+  font-weight: 600;
+  letter-spacing: -.065em;
+  line-height: 1.1;
+  margin: 0 0 26px;
+}
+
+.blog-intro p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.blog-collection {
+  padding-bottom: 100px;
+}
+
+.blog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.blog-search input {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 50px;
+  padding: 13px 18px;
+  width: 250px;
+  max-width: 100%;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+
+.blog-search input:focus {
+  outline: 2px solid #8ba855;
+  outline-offset: 2px;
+}
+
+.blog-article {
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  margin-bottom: 18px;
+}
+
+.blog-meta {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .04em;
+  margin-bottom: 20px;
+}
+
+.blog-article h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(22px, 3vw, 31px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+
+.blog-article p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 780px;
+  margin: 0 0 26px;
+}
+
+.blog-read {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+  padding: 0 0 5px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.blog-thought {
+  display: flex;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  margin-bottom: 14px;
+}
+
+.blog-thought-avatar {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #19362d;
+  color: #d1f36b;
+  font-weight: 700;
+}
+
+.blog-thought-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.blog-thought-date {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.blog-thought p {
+  line-height: 1.75;
+  margin: 14px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.blog-empty {
+  color: var(--muted);
+  padding: 32px 0;
+}
+
+.blog-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.blog-reader {
+  position: fixed;
+  inset: 0;
+  width: min(780px, calc(100% - 32px));
+  max-height: 85vh;
+  padding: clamp(25px, 5vw, 60px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  overflow-y: auto;
+}
+
+.blog-reader::backdrop {
+  background: rgba(12, 29, 23, .65);
+}
+
+.blog-reader-close {
+  display: block;
+  margin: 0 0 30px auto;
+  background: none;
+  border: 0;
+  font-size: 22px;
+}
+
+.blog-reader h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(26px, 4vw, 42px);
+  letter-spacing: -.05em;
+  line-height: 1.2;
+}
+
+.blog-reader-body {
+  line-height: 1.9;
+  color: #35463e;
+}
+
+.blog-reader-body h2 {
+  font-size: 23px;
+  margin-top: 32px;
+}
+
+.blog-reader-body p {
+  margin: 16px 0;
+}
+
+@media (max-width: 700px) {
+  .blog-nav {
+    padding: 22px 0;
+  }
+
+  .blog-intro {
+    padding: 65px 0 50px;
+  }
+
+  .blog-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .blog-search input {
+    width: 100%;
+  }
+
+  .blog-article {
+    padding: 24px;
+  }
+
+  .blog-thought {
+    padding: 20px;
+  }
+
+  .blog-footer {
+    flex-wrap: wrap;
+  }
+}

@@ -55,29 +55,6 @@ const cases = {
 };
 
 // ==========================================
-// PROJECT FILTERS
-// ==========================================
-
-document.querySelectorAll('.filter[data-filter]').forEach(button => {
-  button.onclick = () => {
-    document.querySelectorAll('.filter[data-filter]').forEach(item => {
-      const active = item === button;
-
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-
-    document.querySelectorAll('.project').forEach(project => {
-      const hide =
-        button.dataset.filter !== 'all' &&
-        project.dataset.category !== button.dataset.filter;
-
-      project.classList.toggle('hidden', hide);
-    });
-  };
-});
-
-// ==========================================
 // CASE STUDY DIALOG
 // ==========================================
 

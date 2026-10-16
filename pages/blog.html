@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Articles and thoughts by Iftekhar Hasan on software engineering, AI, technology, and life.">
+  <title>Writing — Iftekhar Hasan</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <main class="blog-page wrap">
+    <nav class="blog-nav" aria-label="Writing navigation">
+      <a class="blog-logo" href="../index.html">ih<span>.</span></a>
+      <a class="blog-back" href="../index.html#writing">← Back to portfolio</a>
+    </nav>
+
+    <section class="blog-intro">
+      <div class="eyebrow">WRITING & REFLECTION</div>
+      <h1>Long stories.<br>Small thoughts.</h1>
+      <p>A space for things I learn, question, and notice.</p>
+    </section>
+
+    <section class="blog-collection" aria-label="Writing collection">
+      <div class="blog-toolbar">
+        <div class="filters" role="tablist" aria-label="Writing type">
+          <button class="filter active" id="blog-articles-tab"
+            type="button" role="tab" aria-selected="true"
+            aria-controls="blog-articles-panel" data-type="articles">
+            Blog posts <span id="blog-articles-count"></span>
+          </button>
+
+          <button class="filter" id="blog-thoughts-tab"
+            type="button" role="tab" aria-selected="false"
+            aria-controls="blog-thoughts-panel" data-type="thoughts"
+            tabindex="-1">
+            Thoughts <span id="blog-thoughts-count"></span>
+          </button>
+        </div>
+
+        <label class="blog-search">
+          <span class="sr-only">Search writing</span>
+          <input id="blog-search-input" type="search"
+            placeholder="Search my writing…">
+        </label>
+      </div>
+
+      <div id="blog-articles-panel" role="tabpanel"
+        aria-labelledby="blog-articles-tab"></div>
+
+      <div id="blog-thoughts-panel" role="tabpanel"
+        aria-labelledby="blog-thoughts-tab" hidden></div>
+
+      <p class="blog-empty" id="blog-empty" hidden>
+        No matching writing found.
+      </p>
+    </section>
+
+    <footer class="blog-footer">
+      <span>© <span id="blog-year"></span> Iftekhar Hasan</span>
+      <a href="../index.html">Back to portfolio ↗</a>
+    </footer>
+  </main>
+
+  <dialog id="blog-reader" class="blog-reader">
+    <button type="button" id="blog-close"
+      class="blog-reader-close" aria-label="Close article">✕</button>
+    <div id="blog-reader-content"></div>
+  </dialog>
+
+  <script src="../scripts/blog-data.js"></script>
+  <script src="../js/blog.js"></script>
+</body>
+</html>
