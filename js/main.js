@@ -1054,11 +1054,11 @@ function renderWriting() {
         '<p>' +
         escapeText(item.summary) +
         '</p>' +
-        '<button class="case" data-article="' +
-        escapeText(item.id) +
+        '<a class="case" href="pages/article.html?id=' +
+        encodeURIComponent(String(item.id)) +
         '">' +
         'Read the story ↗' +
-        '</button>' +
+        '</a>' +
         '</article>'
       : '<article class="thought-entry">' +
         '<div class="avatar" aria-hidden="true">' +

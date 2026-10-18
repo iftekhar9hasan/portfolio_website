@@ -68,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ${escapeHTML(article.date)}
           </div>
           <h2>${escapeHTML(article.title)}</h2>
-          <p>${escapeHTML(article.summary)}</p>
-          <button class="blog-read" type="button"
-            data-article-id="${escapeHTML(article.id)}">
+          <p>${escapeHTML(article.summary)}</p>         
+          <a class="blog-read"
+            href="article.html?id=${encodeURIComponent(String(article.id))}">
             Read the story ↗
-          </button>
+          </a>
         </article>
       `).join("");
     } else {
