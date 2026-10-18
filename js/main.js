@@ -1007,29 +1007,7 @@ const escapeText = value =>
   );
 
 function renderWriting() {
-  const searchInput =
-    document.getElementById('writing-search');
-
-  if (!searchInput) return;
-
-  const query = searchInput.value
-    .toLowerCase()
-    .trim();
-
-  const items = writingData[writingMode].filter(
-    item =>
-      [
-        item.title,
-        item.summary,
-        item.text,
-        item.category,
-        item.content
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase()
-        .includes(query)
-  );
+  const items = writingData[writingMode] || [];
 
   const articlesPanel =
     document.getElementById('articles-panel');
@@ -1194,17 +1172,6 @@ writingTabs.forEach(button => {
     next.focus();
   };
 });
-
-// ==========================================
-// WRITING SEARCH
-// ==========================================
-
-const writingSearch =
-  document.getElementById('writing-search');
-
-if (writingSearch) {
-  writingSearch.oninput = renderWriting;
-}
 
 // ==========================================
 // INITIAL RENDER

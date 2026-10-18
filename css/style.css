@@ -1042,6 +1042,9 @@
   }
 
   .article-entry {
+    width: 100%;
+
+    max-width: none;
 
     padding: 32px;
 
@@ -1049,10 +1052,7 @@
 
     border-radius: 13px;
 
-    background: var(--card);
-
-    max-width: 850px;
-
+    background: var(--bg);
   }
 
   .article-entry h3 {
@@ -1078,8 +1078,9 @@
   .article-entry p { font-size: 15px; }
 
   .thought-entry {
+    width: 100%;
 
-    max-width: 850px;
+    max-width: none;
 
     border-bottom: 1px solid var(--line);
 
@@ -1087,10 +1088,11 @@
 
     display: grid;
 
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 40px minmax(0, 1fr);
 
     gap: 18px;
-
+    
+    background: var(--bg);
   }
 
   .avatar {
