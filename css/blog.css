@@ -298,9 +298,8 @@
 .article-page-content {
   width: 100%;
   max-width: 780px;
-  margin: 0 auto;
+  margin: 0;
 }
-
 /* Article category and date */
 .article-page-meta {
   color: var(--muted);
@@ -371,7 +370,7 @@
 /* Back navigation */
 .article-page-bottom {
   max-width: 780px;
-  margin: 65px auto 0;
+  margin: 65px 0 0;
   padding-top: 25px;
   border-top: 1px solid var(--line);
 }
