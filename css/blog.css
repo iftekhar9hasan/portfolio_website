@@ -152,7 +152,7 @@
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--bg);
+  background: #fff;
   color: var(--ink);
   font-size: 12px;
   font-weight: 700;
