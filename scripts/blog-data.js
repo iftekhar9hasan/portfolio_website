@@ -57,7 +57,7 @@ const blogArticles = [
             <h2>Network Early and Often</h2>
             <p>I was terrified of networking. I thought it felt fake. But it's just talking to people who share your interests. LinkedIn, local meetups, hackathons — these connections matter more than any class you'll take.</p>
         `,
-        featured: false
+        featured: true
     },
     // {
     //     id: 4,

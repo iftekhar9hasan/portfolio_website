@@ -1007,7 +1007,13 @@ const escapeText = value =>
   );
 
 function renderWriting() {
-  const items = writingData[writingMode] || [];
+  const items = writingMode === 'thoughts'
+  ? [...writingData.thoughts]
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .slice(0, 5)
+  : writingData.articles
+      .filter(article => article.featured === true)
+      .slice(0, 2);
 
   const articlesPanel =
     document.getElementById('articles-panel');
@@ -1172,6 +1178,23 @@ writingTabs.forEach(button => {
     next.focus();
   };
 });
+
+// ==========================================
+// HOMEPAGE WRITING COUNTS
+// ==========================================
+
+const articleCount = document.getElementById('article-count');
+const thoughtCount = document.getElementById('thought-count');
+
+if (articleCount) {
+  articleCount.textContent = writingData.articles
+    .filter(article => article.featured === true)
+    .slice(0, 2).length;
+}
+
+if (thoughtCount) {
+  thoughtCount.textContent = Math.min(writingData.thoughts.length, 5);
+}
 
 // ==========================================
 // INITIAL RENDER
